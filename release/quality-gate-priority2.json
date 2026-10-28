@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "build_readiness": {
+      "projects_missing_root_build_metadata": [
+        "Vibes_Quantum_Engine",
+        "Vibes_Quantum_Server",
+        "Vyron_User_App"
+      ],
+      "reason": "One or more source projects lack root build metadata; no compile/build result is claimed",
+      "status": "unavailable"
+    },
+    "json_syntax": {
+      "files_checked": 12,
+      "findings": [],
+      "status": "passed"
+    },
+    "python_syntax": {
+      "files_checked": 14,
+      "findings": [],
+      "status": "passed"
+    },
+    "python_unit_tests": {
+      "duration_seconds": 22.518,
+      "exit_code": 1,
+      "output_tail": "ng, value: Boolean, onChange: (Boolean) -> Unit) {\\n    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {\\n        Text(label, Modifier.weight(1f))\\n        Switch(checked = value, onCheckedChange = onChange)\\n    }\\n}\\n\\n@Composable\\nprivate fun MetricCard(title: String, value: String, modifier: Modifier = Modifier) {\\n    Card(modifier) {\\n        Column(Modifier.padding(14.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {\\n            Text(title, style = MaterialTheme.typography.labelMedium)\\n            Text(value, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)\\n        }\\n    }\\n}\\n\\n\\n/**\\n * Additive ecosystem overview: makes the division between Quantum\\'s training role\\n * and Vyron X\\'s user-facing assistant role explicit without changing training APIs.\\n */\\n@Composable\\nprivate fun EcosystemOverviewScreen(\\n    onOpenTraining: () -> Unit,\\n    onOpenTeaching: () -> Unit,\\n    onOpenModels: () -> Unit,\\n    onOpenAnalytics: () -> Unit,\\n    onOpenDiagnostics: () -> Unit\\n) {\\n    LazyColumn(\\n        Modifier.fillMaxSize().padding(16.dp),\\n        verticalArrangement = Arrangement.spacedBy(14.dp)\\n    ) {\\n        item {\\n            EngineHero(\\n                title = \"One Vibes ecosystem. Clear roles.\",\\n                subtitle = \"Vibes Quantum Engine is the training, evaluation and model-workbench console. Vibes Vyron X is the everyday user assistant for chat, voice, memory and projects. Keep training controls here; ship approved models to user experiences through your configured gateway.\"\\n            )\\n        }\\n        item {\\n            Card(\\n                colors = CardDefaults.cardColors(containerColor = Color(0xFF171A2A)),\\n                border = BorderStroke(1.dp, Color(0xFF8B7CFF).copy(alpha = 0.42f))\\n            ) {\\n                Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {\\n                    Text(\"QUANTUM ENGINE\", color = Color(0xFFB8A2FF), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)\\n                    Text(\"Training & intelligence lab\", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)\\n                    Text(\"Review approved examples, train a compact adapter directly on this device, evaluate outputs, manage model profiles and inspect engine health. Existing SFT/LoRA and external-runtime pathways remain available.\", style = MaterialTheme.typography.bodyMedium)\\n                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {\\n                        OutlinedButton(onClick = onOpenTraining, modifier = Modifier.weight(1f)) { Text(\"Training workbench\") }\\n                        OutlinedButton(onClick = onOpenModels, modifier = Modifier.weight(1f)) { Text(\"Model studio\") }\\n                    }\\n                    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {\\n                        OutlinedButton(onClick = onOpenTeaching, modifier = Modifier.weight(1f)) { Text(\"Teaching & review\") }\\n                        OutlinedButton(onClick = onOpenAnalytics, modifier = Modifier.weight(1f)) { Text(\"Metrics\") }\\n                    }\\n                }\\n            }\\n        }\\n        item {\\n            Card(\\n                colors = CardDefaults.cardColors(containerColor = Color(0xFF102322)),\\n                border = BorderStroke(1.dp, Color(0xFF53E0D7).copy(alpha = 0.42f))\\n            ) {\\n                Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {\\n                    Text(\"VYRON X\", color = Color(0xFF53E0D7), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)\\n                    Text(\"The user-facing AI companion\", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)\\n                    Text(\"Vyron X focuses on useful daily workflows: conversation, voice, saved memory, projects, source-aware answers and personal settings. It can use models and services made available by the Quantum gateway.\", style = MaterialTheme.typography.bodyMedium)\\n                    Text(\"Vyron X uses its own local learning safeguards and can consume approved capabilities from Quantum. Quantum\\'s native adapter training works without a server; remote model serving remains an optional separate capability.\", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)\\n                }\\n            }\\n        }\\n        item {\\n            Card {\\n                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {\\n                    Text(\"Recommended workflow\", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)\\n                    PipelineRow(\"1 \u00b7 Prepare\", true, \"Review and version training data\")\\n                    PipelineRow(\"2 \u00b7 Train\", true, \"Train the local adapter in-app; keep SFT/LoRA paths intact\")\\n                    PipelineRow(\"3 \u00b7 Evaluate\", true, \"Inspect quality, failures and regressions\")\\n                    PipelineRow(\"4 \u00b7 Approve\", true, \"Choose a validated model/checkpoint\")\\n                    PipelineRow(\"5 \u00b7 Serve\", true, \"Publish through the configured gateway\")\\n                    OutlinedButton(onClick = onOpenDiagnostics, modifier = Modifier.fillMaxWidth()) { Text(\"Open diagnostics & health\") }\\n                }\\n            }\\n        }\\n        item {\\n            Text(\\n                \"Additive upgrade policy: this overview adds navigation and guidance only. Existing training methods, data paths and model runtimes are intentionally retained.\",\\n                style = MaterialTheme.typography.bodySmall,\\n                color = MaterialTheme.colorScheme.onSurfaceVariant\\n            )\\n        }\\n    }\\n}\\n'\n\n----------------------------------------------------------------------\nRan 57 tests in 21.726s\n\nFAILED (failures=2)\n",
+      "status": "failed",
+      "tests_discovered": 7,
+      "tests_run": 57
+    },
+    "secret_scan": {
+      "findings": [],
+      "large_files_skipped": 0,
+      "status": "passed"
+    },
+    "shell_syntax": {
+      "files_checked": 1,
+      "findings": [],
+      "status": "passed"
+    }
+  },
+  "created_utc": "2026-10-26T12:55:44+00:00",
+  "limitations": [
+    "No Android/Kotlin/Ktor compile or APK build is run by this gate.",
+    "A source file and a passing static check do not prove runtime integration.",
+    "Secret-pattern scanning is best-effort and cannot guarantee that every credential format is detected."
+  ],
+  "overall": "BLOCKED",
+  "projects": [
+    {
+      "build_markers_found": [],
+      "build_status": "unavailable",
+      "name": "Vibes_Quantum_Engine",
+      "path": "Vibes_Quantum_Engine",
+      "root_build_markers": [],
+      "source_file_count": 154
+    },
+    {
+      "build_markers_found": [
+        "build.gradle.kts",
+        "settings.gradle.kts"
+      ],
+      "build_status": "unavailable",
+      "name": "Vibes_Quantum_Server",
+      "path": "Vibes_Quantum_Server",
+      "root_build_markers": [],
+      "source_file_count": 73
+    },
+    {
+      "build_markers_found": [],
+      "build_status": "unavailable",
+      "name": "Vyron_User_App",
+      "path": "Vyron_User_App",
+      "root_build_markers": [],
+      "source_file_count": 75
+    }
+  ],
+  "root_name": "vibes_priority2_work",
+  "schema_version": 1,
+  "scope": "source inventory, static syntax, credential-pattern scan, included Python tests, build metadata presence"
+}

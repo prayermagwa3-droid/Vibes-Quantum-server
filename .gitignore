@@ -1,0 +1,62 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+credentials.json
+service-account*.json
+.secrets/
+
+# Build outputs and Gradle caches
+.gradle/
+build/
+**/build/
+.kotlin/
+out/
+
+# IDE files
+.idea/
+*.iml
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup
+*.backup2
+
+# Python caches
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local runtime data
+data/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+credentials.json
+service-account*.json
+.secrets/
+
+# Generated files and local state
+.gradle/
+build/
+.kotlin/
+.idea/
+__pycache__/
+*.pyc
+*.log
+data/

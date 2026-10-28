@@ -1,0 +1,11 @@
+/* Phase 15 responsive polish and low-motion animated atmosphere. */
+:root { --vq-aqua:#65e2cd; --vq-violet:#9d8cff; }
+body { background-image: radial-gradient(ellipse at 76% 4%, rgba(75,93,176,.12), transparent 38%), radial-gradient(ellipse at 10% 82%, rgba(31,181,161,.07), transparent 35%); }
+.welcome-panel, .settings-card, .stat-card, .dashboard-card, .phase9-workbench { transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.settings-card:hover, .stat-card:hover { border-color: rgba(101,226,205,.34); }
+.view.active { animation: vq-view-in .24s ease both; }
+@keyframes vq-view-in { from { opacity:.45; transform:translateY(5px) } to { opacity:1; transform:translateY(0) } }
+[data-view="connections"] .settings-card, [data-view="feedback"] .settings-card, [data-view="help"] .settings-card { min-width:0; }
+[data-view="help"] code, [data-view="connections"] code { overflow-wrap:anywhere; }
+@media(max-width:640px) { .page-heading { align-items:flex-start; gap:12px; flex-wrap:wrap; } .stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .settings-grid { grid-template-columns:minmax(0,1fr); } .full-span { grid-column:auto; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.01ms !important; } }

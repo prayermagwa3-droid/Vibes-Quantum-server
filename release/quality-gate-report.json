@@ -1,0 +1,80 @@
+{
+  "checks": {
+    "build_readiness": {
+      "projects_missing_root_build_metadata": [
+        "Vibes_Quantum_Engine",
+        "Vibes_Quantum_Server",
+        "Vyron_User_App"
+      ],
+      "reason": "One or more source projects lack root build metadata; no compile/build result is claimed",
+      "status": "unavailable"
+    },
+    "json_syntax": {
+      "files_checked": 13,
+      "findings": [],
+      "status": "passed"
+    },
+    "python_syntax": {
+      "files_checked": 14,
+      "findings": [],
+      "status": "passed"
+    },
+    "python_unit_tests": {
+      "duration_seconds": 23.137,
+      "exit_code": 0,
+      "output_tail": "k\ntest_snapshot_diff_and_admin_gated_rollback (test_versioning_supervisor.VersioningSupervisorTests.test_snapshot_diff_and_admin_gated_rollback) ... ok\ntest_supervisor_cycle_budget_failure_and_persistent_emergency_stop (test_versioning_supervisor.VersioningSupervisorTests.test_supervisor_cycle_budget_failure_and_persistent_emergency_stop) ... ok\ntest_supervisor_requires_admin_and_bounds_failures (test_versioning_supervisor.VersioningSupervisorTests.test_supervisor_requires_admin_and_bounds_failures) ... ok\ntest_supervisor_is_admin_only_and_continuous_loop_fails_closed (test_workspace_brain_contract.SupervisorIntegrationContractTests.test_supervisor_is_admin_only_and_continuous_loop_fails_closed) ... ok\ntest_android_brain_controls_are_wired_to_client_and_state (test_workspace_brain_contract.WorkspaceBrainContractTests.test_android_brain_controls_are_wired_to_client_and_state) ... ok\ntest_brain_endpoints_require_workspace_scope (test_workspace_brain_contract.WorkspaceBrainContractTests.test_brain_endpoints_require_workspace_scope) ... ok\ntest_brain_lessons_feed_future_agent_prompts (test_workspace_brain_contract.WorkspaceBrainContractTests.test_brain_lessons_feed_future_agent_prompts) ... ok\ntest_builder_profile_and_artifact_bundle_are_exposed_end_to_end (test_workspace_brain_contract.WorkspaceBrainContractTests.test_builder_profile_and_artifact_bundle_are_exposed_end_to_end) ... ok\ntest_engineering_panels_and_chatlab_actions_are_connected (test_workspace_brain_contract.WorkspaceBrainContractTests.test_engineering_panels_and_chatlab_actions_are_connected) ... ok\ntest_memory_is_scoped_by_app_and_target_digest (test_workspace_brain_contract.WorkspaceBrainContractTests.test_memory_is_scoped_by_app_and_target_digest) ... ok\ntest_swarm_has_all_specialists_and_integration_lead (test_workspace_brain_contract.WorkspaceBrainContractTests.test_swarm_has_all_specialists_and_integration_lead) ... ok\ntest_verified_success_requires_passing_tests_and_reviewer (test_workspace_brain_contract.WorkspaceBrainContractTests.test_verified_success_requires_passing_tests_and_reviewer) ... ok\ntest_compare_detects_regression (test_workspace_control.SnapshotTests.test_compare_detects_regression) ... ok\ntest_overlapping_snapshot_paths_rejected (test_workspace_control.SnapshotTests.test_overlapping_snapshot_paths_rejected) ... ok\ntest_rollback_refuses_tampered_snapshot (test_workspace_control.SnapshotTests.test_rollback_refuses_tampered_snapshot) ... ok\ntest_rollback_restores_to_new_candidate_and_verifies (test_workspace_control.SnapshotTests.test_rollback_restores_to_new_candidate_and_verifies) ... ok\ntest_snapshot_skips_secrets_and_records_hash (test_workspace_control.SnapshotTests.test_snapshot_skips_secrets_and_records_hash) ... ok\ntest_budget_limit_disables_continuous (test_workspace_control.SupervisorTests.test_budget_limit_disables_continuous) ... ok\ntest_emergency_stop_is_persistent_and_requires_clear (test_workspace_control.SupervisorTests.test_emergency_stop_is_persistent_and_requires_clear) ... ok\ntest_failure_threshold_disables_continuous (test_workspace_control.SupervisorTests.test_failure_threshold_disables_continuous) ... ok\ntest_mutations_require_admin_token (test_workspace_control.SupervisorTests.test_mutations_require_admin_token) ... ok\ntest_unsafe_limits_rejected (test_workspace_control.SupervisorTests.test_unsafe_limits_rejected) ... ok\ntest_disposable_android_fixture_inspects_clones_and_fails_closed_without_worker (test_workspace_runner.DisposableAndroidWorkflowTests.test_disposable_android_fixture_inspects_clones_and_fails_closed_without_worker) ... ok\ntest_android_profile_detects_kotlin_manifest_dependencies_and_safe_commands (test_workspace_runner.UniversalBuilderProfileTests.test_android_profile_detects_kotlin_manifest_dependencies_and_safe_commands) ... ok\ntest_build_artifacts_are_copied_from_candidate_and_packaged_with_report (test_workspace_runner.UniversalBuilderProfileTests.test_build_artifacts_are_copied_from_candidate_and_packaged_with_report) ... ok\ntest_missing_sandbox_still_persists_a_redacted_build_report (test_workspace_runner.UniversalBuilderProfileTests.test_missing_sandbox_still_persists_a_redacted_build_report) ... ok\ntest_react_vite_profile_lists_dependencies_and_offline_command (test_workspace_runner.UniversalBuilderProfileTests.test_react_vite_profile_lists_dependencies_and_offline_command) ... ok\ntest_unknown_source_project_does_not_invent_build_command (test_workspace_runner.UniversalBuilderProfileTests.test_unknown_source_project_does_not_invent_build_command) ... ok\ntest_archive_extraction_blocks_zip_slip_and_redacts_tokens (test_workspace_runner.WorkspaceRunnerTests.test_archive_extraction_blocks_zip_slip_and_redacts_tokens) ... ok\ntest_candidate_packaging_blocks_embedded_credentials (test_workspace_runner.WorkspaceRunnerTests.test_candidate_packaging_blocks_embedded_credentials) ... ok\ntest_candidate_packaging_excludes_secrets_and_caches (test_workspace_runner.WorkspaceRunnerTests.test_candidate_packaging_excludes_secrets_and_caches) ... ok\ntest_clone_makes_separate_symlink_free_copy_and_keeps_source_unchanged (test_workspace_runner.WorkspaceRunnerTests.test_clone_makes_separate_symlink_free_copy_and_keeps_source_unchanged) ... ok\ntest_node_tests_require_lockfile_and_never_execute_on_host (test_workspace_runner.WorkspaceRunnerTests.test_node_tests_require_lockfile_and_never_execute_on_host) ... ok\ntest_patch_rejects_symlink_traversal_before_git_apply (test_workspace_runner.WorkspaceRunnerTests.test_patch_rejects_symlink_traversal_before_git_apply) ... ok\ntest_project_code_is_not_executed_without_a_sandbox (test_workspace_runner.WorkspaceRunnerTests.test_project_code_is_not_executed_without_a_sandbox) ... ok\ntest_staged_patch_applies_and_path_traversal_is_rejected (test_workspace_runner.WorkspaceRunnerTests.test_staged_patch_applies_and_path_traversal_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 59 tests in 22.423s\n\nOK\n",
+      "status": "passed",
+      "tests_discovered": 7,
+      "tests_run": 59
+    },
+    "secret_scan": {
+      "findings": [],
+      "large_files_skipped": 0,
+      "status": "passed"
+    },
+    "shell_syntax": {
+      "files_checked": 1,
+      "findings": [],
+      "status": "passed"
+    }
+  },
+  "created_utc": "2026-10-26T13:07:26+00:00",
+  "limitations": [
+    "No Android/Kotlin/Ktor compile or APK build is run by this gate.",
+    "A source file and a passing static check do not prove runtime integration.",
+    "Secret-pattern scanning is best-effort and cannot guarantee that every credential format is detected."
+  ],
+  "overall": "NOT_READY",
+  "projects": [
+    {
+      "build_markers_found": [],
+      "build_status": "unavailable",
+      "name": "Vibes_Quantum_Engine",
+      "path": "Vibes_Quantum_Engine",
+      "root_build_markers": [],
+      "source_file_count": 154
+    },
+    {
+      "build_markers_found": [
+        "build.gradle.kts",
+        "settings.gradle.kts"
+      ],
+      "build_status": "unavailable",
+      "name": "Vibes_Quantum_Server",
+      "path": "Vibes_Quantum_Server",
+      "root_build_markers": [],
+      "source_file_count": 73
+    },
+    {
+      "build_markers_found": [],
+      "build_status": "unavailable",
+      "name": "Vyron_User_App",
+      "path": "Vyron_User_App",
+      "root_build_markers": [],
+      "source_file_count": 75
+    }
+  ],
+  "root_name": "vibes_priority2_work",
+  "schema_version": 1,
+  "scope": "source inventory, static syntax, credential-pattern scan, included Python tests, build metadata presence"
+}

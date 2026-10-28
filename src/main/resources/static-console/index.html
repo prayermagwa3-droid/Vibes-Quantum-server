@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0c16">
+  <meta name="description" content="Vibes Quantum — secure app connections, privacy-preserving feedback, and streaming AI gateway.">
+  <link rel="canonical" href="https://vibesquantum.duckdns.org/">
+  <meta property="og:url" content="https://vibesquantum.duckdns.org/">
+  <meta property="og:title" content="Vibes Quantum — Connected Vibes Platform">
+  <meta property="og:description" content="Manage connected Vibes applications, gateway health and app-specific API keys.">
+  <title>Vibes Quantum — Gateway Console</title>
+  <link rel="icon" href="/assets/vibes_icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css?v=2.6.0">
+  <link rel="stylesheet" href="/phase15.css?v=2.9.0">
+  <link rel="stylesheet" href="/phase8.css?v=2.6.0">
+  <link rel="stylesheet" href="/phase9.css?v=2.6.0">
+  <link rel="stylesheet" href="/quality-memory.css?v=2.7.0">
+  <link rel="stylesheet" href="/security-memory.css?v=2.8.0">
+  <link rel="stylesheet" href="/phase17-18.css?v=2.10.0">
+  <link rel="stylesheet" href="/research.css?v=2.6.0">
+  <script defer src="/script.js?v=2.6.0"></script>
+  <script defer src="/quality-memory.js?v=2.7.0"></script>
+  <script defer src="/security-memory.js?v=2.8.0"></script>
+  <script defer src="/research.js?v=2.6.0"></script>
+  <link rel="stylesheet" href="/curriculum.css?v=2.6.0">
+  <link rel="stylesheet" href="/polish.css?v=3.0.0">
+  <script defer src="/curriculum.js?v=2.6.0"></script>
+  <script defer src="/learning.js?v=2.6.0"></script>
+  <script defer src="/streaming.js?v=2.6.0"></script>
+  <script defer src="/council-agents.js?v=2.6.0"></script>
+  <script defer src="/phase17-18.js?v=2.10.0"></script>
+  <script defer src="/polish.js?v=3.0.0"></script>
+</head>
+<body>
+  <div class="drawer-overlay" id="drawerOverlay" tabindex="-1" aria-hidden="true"></div>
+  <aside class="app-drawer" id="appDrawer" aria-label="Main navigation">
+    <div class="drawer-brand-row">
+      <a class="brand" href="/" aria-label="Vibes Quantum dashboard" data-home-link>
+        <span class="brand-mark">VQ</span>
+        <span class="brand-text">VIBES <strong>QUANTUM</strong><small>GATEWAY CONSOLE</small></span>
+      </a>
+      <button class="icon-button drawer-close" id="drawerClose" type="button" aria-label="Close navigation">×</button>
+    </div>
+    <div class="drawer-section-label">WORKSPACE</div>
+    <nav class="drawer-nav" id="drawerNav" aria-label="Workspace sections">
+      <button class="drawer-link active" type="button" data-view-target="dashboard" aria-current="page"><span class="nav-glyph">⌂</span><span data-i18n="overview">Overview</span><span class="nav-arrow">›</span></button>
+      <button class="drawer-link" type="button" data-view-target="apps"><span class="nav-glyph">▦</span><span data-i18n="apps">Connected apps</span><span class="nav-count" id="drawerAppCount">—</span></button>
+      <button class="drawer-link" type="button" data-view-target="research"><span class="nav-glyph">⌕</span><span data-i18n="source_learning">Source learning</span><span class="nav-arrow">›</span></button>
+      <button class="drawer-link" type="button" data-view-target="curriculum"><span class="nav-glyph">✎</span><span data-i18n="curriculum">Curriculum lab</span><span class="nav-arrow">›</span></button>
+      <button class="drawer-link" type="button" data-view-target="learning"><span class="nav-glyph">⟡</span><span data-i18n="privacy_learning">Privacy learning</span><span class="nav-arrow">›</span></button>
+      <button class="drawer-link" type="button" data-view-target="security"><span class="nav-glyph">◈</span><span>Security & audit</span></button>
+      <button class="drawer-link" type="button" data-view-target="personal-memory"><span class="nav-glyph">◎</span><span>Personal memory</span></button>
+      <button class="drawer-link" type="button" data-view-target="code-studio"><span class="nav-glyph">⌘</span><span>Code Studio</span></button>
+      <button class="drawer-link" type="button" data-view-target="api"><span class="nav-glyph">⌘</span><span>API explorer</span></button>
+      <button class="drawer-link" type="button" data-view-target="connections"><span class="nav-glyph">⇄</span><span>API / Connections</span></button>
+      <button class="drawer-link" type="button" data-view-target="feedback"><span class="nav-glyph">✉</span><span>Feedback Panel</span></button>
+      <button class="drawer-link" type="button" data-view-target="usage"><span class="nav-glyph">◷</span><span>Usage</span></button>
+      <button class="drawer-link" type="button" data-view-target="quality"><span class="nav-glyph">✓</span><span data-i18n="quality">Languages &amp; quality</span></button>
+      <button class="drawer-link" type="button" data-view-target="evaluations"><span class="nav-glyph">▤</span><span data-i18n="evaluations">Evaluations</span></button>
+      <button class="drawer-link" type="button" data-view-target="operations"><span class="nav-glyph">⌁</span><span data-i18n="operations">Operations &amp; metrics</span></button>
+      <button class="drawer-link" type="button" data-view-target="help"><span class="nav-glyph">?</span><span>Help & API guide</span></button>
+      <button class="drawer-link" type="button" data-view-target="keys"><span class="nav-glyph">⌑</span><span>API keys</span><span class="nav-lock">SECURE</span></button>
+      <button class="drawer-link" type="button" data-view-target="account"><span class="nav-glyph">◉</span><span>Google account</span></button>
+      <button class="drawer-link" type="button" data-view-target="settings"><span class="nav-glyph">⚙</span><span>Settings & docs</span></button>
+    </nav>
+    <div class="drawer-spacer"></div>
+    <div class="drawer-connection">
+      <span class="connection-led" id="drawerHealthLed"></span>
+      <div><strong id="drawerHealthTitle">Checking gateway</strong><small id="drawerHealthText">Contacting Vibes Quantum…</small></div>
+    </div>
+    <div class="drawer-bottom"><span class="brand-mini">VQ</span><span>Vibes ecosystem</span><span class="version-pill">v2.6.0</span></div>
+  </aside>
+
+  <div class="app-shell" id="appShell">
+    <header class="topbar">
+      <div class="topbar-start">
+        <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="appDrawer">☰</button>
+        <div class="breadcrumb"><span>Vibes Quantum</span><span class="breadcrumb-sep">/</span><strong id="currentViewLabel">Overview</strong></div>
+      </div>
+      <div class="topbar-actions">
+        <div class="locale-switch"><label class="sr-only" for="uiLanguage">Interface language</label><select id="uiLanguage" aria-describedby="languageReviewNotice" title="Interface language"><option value="en">English</option><option value="sn">ChiShona · draft</option><option value="nd">isiNdebele · draft</option></select></div>
+        <a class="domain-pill" href="https://vibesquantum.duckdns.org/" target="_blank" rel="noopener noreferrer"><span class="domain-led"></span> vibesquantum.duckdns.org <span aria-hidden="true">↗</span></a>
+        <button class="account-chip" id="accountTopBtn" type="button" data-go-view="account"><span class="account-avatar" id="topAvatar">VQ</span><span id="topAccountLabel">Sign in</span></button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <p id="languageReviewNotice" class="language-review-notice" role="status" aria-live="polite" hidden></p>
+      <section class="view active" data-view="dashboard" id="dashboardView">
+        <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-dot"></span> CONNECTED INTELLIGENCE</div><h1>Gateway <span>overview</span></h1><p>One secure home for Vibes apps, credentials and platform health.</p></div><button class="button button-secondary" type="button" id="refreshDashboard">↻ Refresh status</button></div>
+        <div class="welcome-panel">
+          <div class="welcome-content"><div class="welcome-chip"><span class="sparkle">✦</span> VIBES QUANTUM NETWORK</div><h2>Make every Vibes app<br><span>work together.</span></h2><p>Discover connected applications, issue app-specific API keys and keep integrations under your control.</p><div class="welcome-actions"><button class="button button-primary" type="button" data-go-view="apps">Explore connected apps <span>↗</span></button><button class="text-button" type="button" data-go-view="keys">Manage API keys <span>→</span></button></div></div>
+          <div class="welcome-visual" aria-hidden="true"><div class="planet-orbit orbit-a"></div><div class="planet-orbit orbit-b"></div><div class="planet-core">VQ</div><span class="planet-node node-a">VX</span><span class="planet-node node-b">AI</span><span class="planet-node node-c">+</span><span class="planet-spark spark-a">✦</span><span class="planet-spark spark-b">·</span></div>
+          <div class="welcome-footer"><span><i class="tiny-led"></i> App-bound credentials</span><span><i class="tiny-led"></i> Persistent app registry</span><span><i class="tiny-led"></i> Google Sign-In support</span></div>
+        </div>
+        <div class="section-title-row"><div><div class="eyebrow">AT A GLANCE</div><h2>Live gateway status</h2></div><span class="live-pill"><span></span> LIVE CHECKS</span></div>
+        <div class="stats-grid" aria-label="Gateway statistics">
+          <article class="stat-card"><div class="stat-icon violet-icon">▦</div><span class="stat-label">REGISTERED APPS</span><strong id="statTotal">—</strong><span class="stat-foot">Applications in the directory</span></article>
+          <article class="stat-card"><div class="stat-icon cyan-icon">⌁</div><span class="stat-label">ONLINE</span><strong id="statOnline" class="stat-cyan">—</strong><span class="stat-foot">Heartbeat seen recently</span></article>
+          <article class="stat-card"><div class="stat-icon amber-icon">◷</div><span class="stat-label">OFFLINE</span><strong id="statOffline" class="stat-amber">—</strong><span class="stat-foot">No heartbeat for 5 minutes</span></article>
+          <article class="stat-card"><div class="stat-icon blue-icon">◌</div><span class="stat-label">GATEWAY UPTIME</span><strong id="statUptime">—</strong><span class="stat-foot" id="statsUpdated">Awaiting first check</span><span class="stat-foot stat-storage" id="statRegistryMode">Registry status pending</span></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-card"><div class="card-heading"><div><span class="card-kicker">START HERE</span><h3>Quick actions</h3></div><span class="heading-icon">✦</span></div><button class="quick-action" type="button" data-go-view="apps"><span class="quick-icon">▦</span><span><strong>Connect an app</strong><small>Register and monitor a Vibes app</small></span><b>→</b></button><button class="quick-action" type="button" data-go-view="keys"><span class="quick-icon key-quick">⌑</span><span><strong>Create an API key</strong><small>Issue a secret bound to one app ID</small></span><b>→</b></button><button class="quick-action" type="button" data-go-view="account"><span class="quick-icon user-quick">◉</span><span><strong>Google Sign-In</strong><small>Sign in to the gateway console</small></span><b>→</b></button></article>
+          <article class="dashboard-card endpoint-status-card"><div class="card-heading"><div><span class="card-kicker">PLATFORM SERVICE</span><h3>Gateway connection</h3></div><span class="status-badge pending" id="healthBadge">Checking</span></div><div class="service-url-row"><span class="service-url-icon">↗</span><div><small>CANONICAL WEBSITE</small><strong>https://vibesquantum.duckdns.org</strong></div><button type="button" class="copy-small" id="copyGatewayUrl" aria-label="Copy gateway URL">Copy</button></div><div class="service-check-row"><span class="service-check-dot" id="serviceCheckDot"></span><span id="serviceCheckText">Checking /api/health…</span></div><p class="small-note">The configured URL is the intended public address. DNS, hosting and TLS must also point to this server for it to be reachable online.</p></article>
+        </div>
+      </section>
+
+      <section class="view" data-view="apps" id="appsView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">APP DIRECTORY</div><h1>Connected <span>apps</span></h1><p>Search the registry and monitor which Vibes applications are sending heartbeats.</p></div><button class="button button-secondary" id="refreshApps" type="button">↻ Refresh</button></div>
+        <div class="stats-strip"><div><span class="strip-dot cyan"></span><span id="registrySummary">Loading app directory…</span></div><span class="muted-label">DIRECTORY METADATA IS PUBLIC</span></div>
+        <div class="registry-panel">
+          <form class="registry-filters" id="appFilters">
+            <label class="filter-search">Search apps<input id="appSearch" name="q" type="search" maxlength="100" placeholder="Name, ID, URL or capability" autocomplete="off"></label>
+            <label>Capability<input id="appCapability" name="capability" maxlength="80" placeholder="e.g. notes"></label>
+            <label>Status<select id="appStatus" name="status"><option value="">All statuses</option><option value="online">Online</option><option value="offline">Offline</option></select></label>
+            <button class="button button-primary filter-button" type="submit">Apply filters</button><button class="button button-ghost clear-button" id="clearFilters" type="button">Clear</button>
+          </form>
+          <div class="app-grid" id="appGrid" aria-live="polite"><div class="registry-empty">Connecting to the gateway…</div></div>
+          <div class="registry-pagination"><span id="pageSummary">Page 1</span><div><button id="previousPage" type="button" disabled>← Previous</button><button id="nextPage" type="button" disabled>Next →</button></div></div>
+          <p class="small-note registry-note">App records contain public metadata only. Each app-specific API key is bound to one app ID and may only be used for its permitted operations.</p>
+        </div>
+      </section>
+
+      <section class="view" data-view="research" id="researchView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 6 · RESPONSIBLE WEB LEARNING</div><h1>Source <span>learning</span></h1><p>Run narrow, budgeted research for a real evidence gap. All results remain untrusted and pending human review.</p></div><button class="button button-secondary" id="refreshResearch" type="button" disabled>↻ Refresh</button></div>
+        <div class="research-security-note"><strong>Manual and opt-in only</strong><span>No background crawling. Provider credentials remain on the server. Retrieved pages cannot run commands or approve their own claims.</span></div>
+        <div class="research-gate-card" id="researchGate">
+          <div class="research-gate-icon" aria-hidden="true">⌑</div><div><span class="card-kicker">ADMINISTRATOR ACCESS</span><h2>Unlock source learning</h2><p>Use the server's <code>VIBES_GATEWAY_KEY</code>. It is held in page memory only and is cleared when you lock the console.</p></div>
+          <form id="researchUnlockForm"><label for="researchAdminKey">Gateway admin key</label><input id="researchAdminKey" type="password" maxlength="512" autocomplete="current-password" required placeholder="Paste server admin key"><button class="button button-primary" type="submit" id="researchUnlockButton">Unlock research panel</button><p id="researchUnlockStatus" class="form-status" aria-live="polite"></p></form>
+        </div>
+        <div id="researchPanel" hidden>
+          <div class="research-overview-grid">
+            <article class="research-stat-card"><span>CONNECTOR FEATURE FLAG</span><strong id="sourceFeatureState">Checking…</strong><small>Controlled by VIBES_SOURCE_CONNECTORS_ENABLED</small></article>
+            <article class="research-stat-card"><span>PENDING REVIEW</span><strong id="sourcePendingCount">—</strong><small>Evidence candidates awaiting review</small></article>
+            <article class="research-stat-card"><span>PER-RUN BUDGET</span><strong id="sourceBudgetValue">—</strong><small id="sourceBudgetDetails">Request and byte ceilings</small></article>
+          </div>
+          <div class="research-layout">
+            <section class="research-card">
+              <div class="research-card-heading"><div><span class="card-kicker">TARGETED DISCOVERY</span><h2>Research an evidence gap</h2></div><span class="status-badge pending">Manual run</span></div>
+              <form id="sourceRunForm" class="source-run-form">
+                <label for="sourceQuery">Research question or weak claim<textarea id="sourceQuery" name="query" maxlength="300" rows="3" required placeholder="e.g. What reliable evidence explains yellowing in maize leaves?"></textarea><small>3–300 characters. A query is required; the engine does not crawl indiscriminately.</small></label>
+                <label for="sourceGapReason">Why is more evidence needed?<select id="sourceGapReason" name="reasonForResearch" required><option value="MISSING_EVIDENCE">Missing evidence</option><option value="LOW_CONFIDENCE">Low confidence</option><option value="CONTRADICTION">Conflicting evidence</option></select></label>
+                <fieldset class="source-checkboxes"><legend>Configured connectors</legend><label><input type="checkbox" name="connectorIds" value="wikipedia" checked><span><strong>Wikipedia API</strong><small>Public API · short excerpt · attribution required</small></span></label><label><input type="checkbox" name="connectorIds" value="brave_search"><span><strong>Brave Search API</strong><small>Requires server-side VIBES_BRAVE_SEARCH_API_KEY</small></span></label><label><input type="checkbox" name="connectorIds" value="youtube"><span><strong>YouTube Data API</strong><small>Metadata only · requires server-side VIBES_YOUTUBE_API_KEY</small></span></label><label><input type="checkbox" name="connectorIds" value="reddit"><span><strong>Reddit public discussions</strong><small>OAuth API · opinions only · requires server-side client credentials</small></span></label></fieldset>
+                <button class="button button-primary" id="runSourceLearning" type="submit">Search for evidence</button><p class="form-status" id="sourceRunStatus" role="status" aria-live="polite"></p>
+              </form>
+              <div class="research-subheading"><h3>Connector health</h3><span>Live server configuration and last-run state</span></div>
+              <div id="sourceConnectorHealth" class="source-connector-health" aria-live="polite"><div class="registry-empty">Unlock to load connector health.</div></div>
+            </section>
+            <section class="research-card">
+              <div class="research-card-heading"><div><span class="card-kicker">REVIEW INBOX</span><h2>Pending evidence candidates</h2></div><span class="review-count" id="sourceCandidateCount">—</span></div>
+              <p class="small-note">Candidate excerpts are untrusted source material. These records do not become shared knowledge until an authorized trainer reviews them in the Feedback Panel.</p>
+              <div id="sourceCandidates" class="source-candidates" aria-live="polite"><div class="registry-empty">Unlock to load the review inbox.</div></div>
+              <div class="research-subheading"><h3>Recent research runs</h3><span>Measured requests and response bytes</span></div>
+              <div id="sourceRunHistory" class="source-run-history"><div class="registry-empty">No research run loaded.</div></div>
+              <p class="small-note">Provider billing cost is not inferred from requests or bytes. Check the provider's own usage console for billable amounts.</p>
+            </section>
+          </div>
+          <div class="research-footer"><span>Admin credential stays in browser memory only.</span><button class="button button-ghost" id="lockResearchButton" type="button">Lock research console</button></div>
+        </div>
+      </section>
+
+      <section class="view" data-view="curriculum" id="curriculumView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 7 · SYNTHETIC PRACTICE & CURRICULUM</div><h1>Curriculum <span>lab</span></h1><p>Create domain curricula, register reviewed claims with evidence, and generate synthetic practice questions for trainer review.</p></div><button class="button button-secondary" id="refreshCurriculum" type="button">↻ Refresh</button></div>
+        <div class="research-security-note"><strong>Practice only</strong><span>Generated questions are synthetic, never independent evidence, and never enter evaluation holdouts. Claims submitted here require an explicit trainer identity and evidence references.</span></div>
+        <div class="research-gate-card" id="curriculumGate">
+          <div class="research-gate-icon" aria-hidden="true">✎</div><div><span class="card-kicker">ADMINISTRATOR ACCESS</span><h2>Unlock curriculum lab</h2><p>Uses the same server-side gateway administrator key as Source Learning. The key stays in page memory only.</p></div>
+          <form id="curriculumUnlockForm"><label for="curriculumAdminKey">Gateway admin key</label><input id="curriculumAdminKey" type="password" maxlength="512" autocomplete="current-password" required placeholder="Paste server admin key"><button class="button button-primary" type="submit" id="curriculumUnlockButton">Unlock curriculum lab</button><p id="curriculumUnlockStatus" class="form-status" aria-live="polite"></p></form>
+        </div>
+        <div id="curriculumPanel" hidden>
+          <div class="research-overview-grid">
+            <article class="research-stat-card"><span>CURRICULA</span><strong id="curriculumCount">—</strong><small>Configured learning paths</small></article>
+            <article class="research-stat-card"><span>APPROVED CLAIMS</span><strong id="approvedClaimCount">—</strong><small>Evidence-backed, trainer-reviewed claims</small></article>
+            <article class="research-stat-card"><span>NEEDS REVIEW</span><strong id="syntheticCandidateCount">—</strong><small>Synthetic practice candidates</small></article>
+          </div>
+          <div class="curriculum-grid">
+            <section class="research-card"><div class="research-card-heading"><div><span class="card-kicker">CURRICULUM DESIGNER</span><h2>Create a curriculum</h2></div></div>
+              <form id="createCurriculumForm" class="source-run-form">
+                <label>Title<input id="curriculumTitle" maxlength="120" required placeholder="Foundations of plant nutrition"></label>
+                <label>Domain<input id="curriculumDomain" maxlength="80" required placeholder="agriculture"></label>
+                <label>Learning objectives<textarea id="curriculumObjectives" maxlength="1500" rows="3" required placeholder="One objective per line"></textarea></label>
+                <label>Prerequisite curriculum IDs (optional, one per line)<textarea id="curriculumPrerequisites" maxlength="2000" rows="2" placeholder="Existing curriculum IDs"></textarea></label>
+                <label>Sort order<input id="curriculumSortOrder" type="number" min="-100000" max="100000" value="0"></label>
+                <label class="curriculum-enabled-option"><input id="curriculumEnabled" type="checkbox" checked> Curriculum enabled</label>
+                <label>Difficulty<select id="curriculumDifficulty"><option value="FOUNDATION">Foundation</option><option value="RELATIONSHIP">Relationships</option><option value="EXCEPTION">Exceptions</option><option value="CAUSAL">Causal reasoning</option><option value="TEMPORAL">Temporal reasoning</option><option value="SYNTHESIS">Multi-step synthesis</option></select></label>
+                <div class="curriculum-form-actions"><button class="button button-primary" id="saveCurriculumButton" type="submit">Create curriculum</button><button class="button button-ghost" id="cancelCurriculumEdit" type="button" hidden>Cancel edit</button></div><p class="form-status" id="createCurriculumStatus" role="status" aria-live="polite"></p>
+              </form>
+              <div class="research-subheading"><h3>Curriculum list</h3><span>IDs can be used as prerequisites</span></div><div id="curriculumList" class="source-candidates" aria-live="polite"><div class="registry-empty">No curricula created yet.</div></div>
+              <div class="research-subheading"><h3>Register reviewed claim</h3><span>Admin action; requires evidence</span></div>
+              <form id="createClaimForm" class="source-run-form">
+                <label>Subject<input id="claimSubject" maxlength="180" required placeholder="Maize"></label>
+                <label>Relation<input id="claimRelation" maxlength="80" required placeholder="HAS_PART / REQUIRES / ..."></label>
+                <label>Object or claim value<input id="claimObject" maxlength="500" required placeholder="..."></label>
+                <label>Domain<input id="claimDomain" maxlength="80" required placeholder="agriculture"></label>
+                <label>Claim language<select id="claimLanguage"><option value="en">English</option><option value="sn">Shona</option><option value="nd">Ndebele</option></select></label>
+                <label>Scope (optional)<input id="claimScope" maxlength="300" placeholder="Conditions where this applies"></label>
+                <label>Exceptions (optional)<textarea id="claimExceptions" rows="2" maxlength="1000" placeholder="One exception per line"></textarea></label>
+                <label>Evidence references<textarea id="claimEvidence" rows="2" maxlength="2000" required placeholder="One HTTPS URL or URN per line"></textarea></label>
+                <label>Reviewed by<input id="claimReviewer" maxlength="120" required placeholder="Trainer identifier"></label>
+                <button class="button button-primary" type="submit">Register reviewed claim</button><p class="form-status" id="createClaimStatus" role="status" aria-live="polite"></p>
+              </form>
+            </section>
+            <section class="research-card"><div class="research-card-heading"><div><span class="card-kicker">QUESTION GENERATOR</span><h2>Generate practice questions</h2></div><span class="status-badge pending">Synthetic</span></div>
+              <form id="generateQuestionsForm" class="source-run-form">
+                <label>Curriculum<select id="generateCurriculumId" required><option value="">Create a curriculum first</option></select></label>
+                <label>Question language<select id="generateLanguage"><option value="en">English</option><option value="sn">Shona</option><option value="nd">Ndebele</option></select></label>
+                <label>Maximum questions<input id="generateLimit" type="number" min="1" max="100" value="20" required></label>
+                <button class="button button-primary" id="generateQuestionsButton" type="submit">Generate questions</button><p class="form-status" id="generateQuestionsStatus" role="status" aria-live="polite"></p>
+              </form>
+              <div class="research-subheading"><h3>Question review queue</h3><span>Accept, edit or discard</span></div>
+              <div id="syntheticQuestions" class="source-candidates" aria-live="polite"><div class="registry-empty">Unlock to load synthetic practice candidates.</div></div>
+              <div class="research-footer"><span>Accepted examples are available by domain for few-shot use. Holdout tests remain separate.</span><button class="button button-ghost" id="lockCurriculumButton" type="button">Lock curriculum lab</button></div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="learning" id="learningView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 8 · CROSS-APP FEEDBACK</div><h1>Privacy <span>learning</span></h1><p>Configure tenant-specific, consent-gated feedback signals without merging private app data into global facts.</p></div><button class="button button-secondary" id="refreshLearning" type="button">↻ Refresh</button></div>
+        <div class="research-security-note learning-security-note"><strong>Privacy-first by default</strong><span>Disabled until an administrator opts an app in. Never submit private conversations, contacts, personal histories, voice recordings, or sensitive details. Teaching examples are explicit submissions and stay pending review.</span></div>
+        <div class="research-gate-card" id="learningGate">
+          <div class="research-gate-icon" aria-hidden="true">⟡</div><div><span class="card-kicker">ADMINISTRATOR ACCESS</span><h2>Unlock privacy controls</h2><p>Use the same server gateway admin key as the other controls. It stays in page memory and is never written to browser storage.</p></div>
+          <form id="learningUnlockForm"><label for="learningAdminKey">Gateway admin key</label><input id="learningAdminKey" type="password" maxlength="512" autocomplete="current-password" required placeholder="Paste server admin key"><button class="button button-primary" type="submit" id="learningUnlockButton">Unlock privacy console</button><p id="learningUnlockStatus" class="form-status" aria-live="polite"></p></form>
+        </div>
+        <div id="learningPanel" hidden>
+          <section class="research-card learning-target-card">
+            <div class="research-card-heading"><div><span class="card-kicker">TENANT POLICY</span><h2>Configure one app at a time</h2></div><span class="status-badge pending">Explicit opt-in</span></div>
+            <form id="learningAppForm" class="learning-target-form"><label for="learningAppId">App ID<input id="learningAppId" maxlength="64" pattern="[A-Za-z0-9][A-Za-z0-9._-]*" required placeholder="e.g. vibes-vyron-x"></label><button class="button button-secondary" type="submit" id="loadLearningApp">Load app policy</button><p id="learningPolicyStatus" class="form-status" role="status" aria-live="polite"></p></form>
+          </section>
+          <div class="research-overview-grid learning-stats-grid">
+            <article class="research-stat-card"><span>POLICY STATE</span><strong id="learningEnabledState">—</strong><small id="learningPolicyUpdated">No app loaded</small></article>
+            <article class="research-stat-card"><span>RETAINED SIGNALS</span><strong id="learningSignalCount">—</strong><small>Expired records are purged on access</small></article>
+            <article class="research-stat-card"><span>TEACHING REVIEW</span><strong id="learningPendingCount">—</strong><small>Examples remain pending, not facts</small></article>
+            <article class="research-stat-card"><span>DAILY QUOTA</span><strong id="learningDailyCount">—</strong><small id="learningConsentCount">Consent not loaded</small></article>
+          </div>
+          <div class="learning-policy-grid">
+            <section class="research-card">
+              <div class="research-card-heading"><div><span class="card-kicker">MINIMUM NECESSARY SIGNALS</span><h2>Sharing policy</h2></div></div>
+              <form id="learningPolicyForm" class="source-run-form">
+                <label class="curriculum-enabled-option"><input id="learningPolicyEnabled" type="checkbox"> Enable optional learning for this app</label>
+                <div class="learning-category-list"><span class="scope-heading">ALLOWED CATEGORIES</span>
+                  <label class="scope-option"><input type="checkbox" value="rating" name="learningCategory"><span><strong>Thumbs up / down</strong><small>Aggregate quality feedback</small></span></label>
+                  <label class="scope-option"><input type="checkbox" value="task_outcome" name="learningCategory"><span><strong>Task outcome</strong><small>Success, failure, or partial completion</small></span></label>
+                  <label class="scope-option"><input type="checkbox" value="error_category" name="learningCategory"><span><strong>Error category</strong><small>Short codes only; no free-text exception dumps</small></span></label>
+                  <label class="scope-option"><input type="checkbox" value="teaching_example" name="learningCategory"><span><strong>Explicit teaching example</strong><small>Short submitted example; always pending review</small></span></label>
+                </div>
+                <div class="learning-policy-numbers"><label>Retention (days)<input id="learningRetentionDays" type="number" min="1" max="365" value="30" required></label><label>Daily quota<input id="learningDailyQuota" type="number" min="1" max="100000" value="500" required></label><label>Policy version<input id="learningPolicyVersion" maxlength="32" pattern="[A-Za-z0-9._-]+" value="1" required></label></div>
+                <button class="button button-primary" id="saveLearningPolicy" type="submit">Save app policy</button><p id="saveLearningPolicyStatus" class="form-status" role="status" aria-live="polite"></p>
+              </form>
+            </section>
+            <section class="research-card">
+              <div class="research-card-heading"><div><span class="card-kicker">AUDIT & REVIEW</span><h2>Recent signal activity</h2></div><button class="button button-ghost" id="refreshLearningSignals" type="button">Refresh</button></div>
+              <div id="learningFeedbackList" class="source-candidates" aria-live="polite"><div class="registry-empty">Load an app to inspect retained signals.</div></div>
+              <div class="learning-privacy-summary"><strong>Hard boundaries</strong><p>Every signal is scoped to one app ID and one hashed app-local subject reference. Consent is category-specific. Tenant feedback cannot silently rewrite approved global claims; submitted teaching examples stay in review.</p></div>
+            </section>
+          </div>
+          <div class="research-footer"><span>Administrator credential stays in page memory only.</span><button class="button button-ghost" id="lockLearningButton" type="button">Lock privacy console</button></div>
+        </div>
+      </section>
+
+      <section class="view" data-view="api" id="apiView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">DEVELOPER TOOLKIT · PHASES 9–10</div><h1>API <span>explorer</span></h1><p>Inspect gateway health, compare council answers, and run app-scoped tasks with explicit approval gates.</p></div><span class="read-only-pill"><span></span> READ-ONLY CHECKS</span></div>
+        <div class="api-layout">
+          <aside class="endpoint-list-panel"><div class="panel-top-title"><span>ENDPOINTS</span><span class="tiny-count">05</span></div><button class="endpoint-choice selected" type="button" data-endpoint="/api/health"><span class="method get-method">GET</span><span><strong>Health</strong><small>/api/health</small></span></button><button class="endpoint-choice" type="button" data-endpoint="/api/v1/gateway/info"><span class="method get-method">GET</span><span><strong>Gateway info</strong><small>/api/v1/gateway/info</small></span></button><button class="endpoint-choice" type="button" data-endpoint="/api/v1/gateway/stats"><span class="method get-method">GET</span><span><strong>Live statistics</strong><small>/api/v1/gateway/stats</small></span></button><button class="endpoint-choice" type="button" data-endpoint="/api/v1/gateway/ai/status"><span class="method get-method">GET</span><span><strong>AI gateway status</strong><small>/api/v1/gateway/ai/status</small></span></button><button class="endpoint-choice" type="button" data-endpoint="/api/v1/apps"><span class="method get-method">GET</span><span><strong>Discover apps</strong><small>/api/v1/apps</small></span></button></aside>
+          <div class="api-panel"><div class="api-panel-top"><div class="window-dots"><i></i><i></i><i></i></div><span>Vibes Quantum API</span><span class="status read-only-status"><i></i> GET</span></div><div class="endpoint"><span class="method get-method">GET</span><code id="endpointPath">/api/health</code><button id="testApi" class="button button-primary" type="button">Send request <span>↗</span></button></div><pre id="apiResult" aria-live="polite">Choose an endpoint and send a read-only request.</pre><div class="api-panel-foot"><span><i class="tiny-led"></i> Requests stay on this gateway origin</span><button type="button" class="text-button" data-go-view="keys">Manage app keys →</button></div></div>
+        </div>
+        <div class="endpoint-reference"><div><div class="eyebrow">API BASE URL</div><h3>https://vibesquantum.duckdns.org</h3><p>Inference is available at <code>POST /v1/chat/completions</code>. Optional council synthesis uses <code>POST /v1/council/completions</code> with <code>ai:chat</code>; scoped task agents use <code>POST /v1/agents/tasks</code> with <code>agents:run</code>. Secrets belong in secure headers, never in URLs.</p></div><button class="button button-secondary" type="button" id="copyApiBase">Copy base URL</button></div>
+        <section class="research-card stream-playground" aria-labelledby="streamPlaygroundTitle">
+          <div class="research-card-heading"><div><span class="card-kicker">PHASE 8 · LIVE RESPONSE TRANSPORT</span><h2 id="streamPlaygroundTitle">Streaming playground</h2><p>Try OpenAI-compatible server-sent events and see text arrive chunk by chunk.</p></div><span class="streaming-status" id="streamStatus"><i></i> Idle</span></div>
+          <form id="streamForm" class="stream-form">
+            <label>App API key<input id="streamApiKey" type="password" autocomplete="off" maxlength="128" required placeholder="App key with ai:chat scope"></label>
+            <label>Model<select id="streamModel" required><option value="">Loading allowed models…</option></select></label>
+            <label class="stream-prompt-label">Prompt<textarea id="streamPrompt" rows="3" maxlength="4000" required placeholder="Ask a small test question…"></textarea></label>
+            <div class="stream-form-actions"><button class="button button-primary" id="startStreamButton" type="submit">▶ Start streaming</button><button class="button button-ghost" id="cancelStreamButton" type="button" disabled>Stop stream</button><button class="button button-ghost" id="clearStreamButton" type="button">Clear</button></div>
+            <p id="streamFormStatus" class="form-status" role="status" aria-live="polite">Your prompt is forwarded to the configured provider. Do not enter private or sensitive information.</p>
+          </form>
+          <div class="stream-output-shell"><div class="stream-output-top"><span>STREAM OUTPUT</span><span id="streamMeta">Waiting for request</span></div><pre id="streamOutput" class="stream-output" aria-live="polite">Your response will appear here as the server sends each event.</pre></div>
+        </section>
+
+        <section class="phase9-workbench" aria-labelledby="councilWorkbenchTitle">
+          <div class="phase9-heading"><div><span class="card-kicker">PHASE 9 · PROVIDER ROUTING</span><h2 id="councilWorkbenchTitle">AI Council & answer synthesis</h2><p>Compare configured models, inspect the evidence trail, and surface disagreement instead of treating model votes as proof.</p></div><span class="status-badge pending">Budget bounded</span></div>
+          <form id="councilForm" class="phase9-form">
+            <label>App API key<input id="councilApiKey" type="password" maxlength="128" autocomplete="off" required placeholder="Key with ai:chat scope"></label>
+            <div class="phase9-control-row"><label>Mode<select id="councilMode"><option value="STANDARD">Standard</option><option value="COUNCIL" selected>Council</option><option value="DEEP_THINK">Deep Think</option></select></label><label>Max cost (USD)<input id="councilBudget" type="number" min="0" max="10" step="0.001" value="0.05" required></label><label>Max members<input id="councilMaxMembers" type="number" min="1" max="12" value="6" required></label></div>
+            <label class="phase9-toggle"><input id="councilEnabled" type="checkbox" checked><span><strong>Enable Council</strong><small>Turn off to use the Standard single-answer path.</small></span></label>
+            <label class="phase9-toggle"><input id="councilOnlineBoost" type="checkbox"><span><strong>Online Boost</strong><small>Explicitly permit configured cloud providers when evidence is attached. Only send the minimum required data.</small></span></label>
+            <label>Question / task<textarea id="councilPrompt" rows="3" maxlength="20000" required placeholder="What should the council answer or compare?"></textarea></label>
+            <label>Evidence (optional; one item per line)<textarea id="councilEvidence" rows="3" maxlength="12000" placeholder="S1 | https://example.org/report | Key finding from the source&#10;S2 | | Second supplied fact"></textarea><small class="phase9-help">Format: ID | optional URL | evidence text. Treat pasted source content as untrusted data.</small></label>
+            <details class="phase9-roles"><summary>Choose council roles (optional)</summary><div id="councilRoles" class="phase9-role-options"><span class="phase9-muted">Loading role directory…</span></div></details>
+            <button class="button button-primary" type="submit" id="runCouncilButton">Run answer synthesis</button><p id="councilStatus" class="form-status" role="status" aria-live="polite">The request stays on this gateway. Cloud providers are selected only under server privacy and budget rules.</p>
+          </form>
+          <div class="phase9-output-card"><div class="phase9-output-heading"><span>COUNCIL RESPONSE</span><span id="councilConfidence" class="status-badge pending">Not run</span></div><pre id="councilOutput" aria-live="polite">Answer, member progress, source provenance, and disagreement notes will appear here.</pre><div id="councilMemberResults" class="phase9-member-results"></div></div>
+        </section>
+
+        <section class="phase9-workbench" aria-labelledby="agentWorkbenchTitle">
+          <div class="phase9-heading"><div><span class="card-kicker">PHASE 10 · TASK ORCHESTRATION</span><h2 id="agentWorkbenchTitle">Six task agents</h2><p>Auto-select routes each task to one agent, or choose Research, Code, Write, Memory, Voice, or Plan manually. Submission does not grant permission for consequential actions.</p></div><span class="status-badge pending">Approval gated</span></div>
+          <form id="agentForm" class="phase9-form">
+            <label>App API key<input id="agentApiKey" type="password" maxlength="128" autocomplete="off" required placeholder="Key with agents:run scope"></label>
+            <div class="phase9-control-row"><label>Agent<select id="agentKind"><option value="auto" selected>Auto-select from task</option><option value="research">Research</option><option value="code">Code</option><option value="write">Write</option><option value="memory">Memory</option><option value="voice">Voice</option><option value="plan">Plan</option></select></label><label>Action<select id="agentAction"><option value="assist">Assist (no external action)</option><option value="execute_code">Execute supplied code (approval required)</option><option value="build">Isolated build worker (not configured by default)</option></select></label><label>Budget (USD)<input id="agentBudget" type="number" min="0" max="3" step="0.001" value="0.03" required></label></div>
+            <label>Task description<textarea id="agentTask" rows="3" maxlength="12000" required placeholder="Describe one specific task."></textarea></label>
+            <div class="phase9-control-row"><label>Code language (for execution)<select id="agentLanguage"><option value="python">Python</option><option value="node">Node.js</option></select></label><label class="phase9-toggle"><input id="agentOnlineBoost" type="checkbox"><span><strong>Online Boost</strong><small>Allow configured cloud providers for this task.</small></span></label></div>
+            <label>Code to execute (optional)<textarea id="agentCode" rows="5" maxlength="12000" placeholder="For execute_code only. Never paste secrets. Code runs only in the configured isolated container; otherwise the task fails closed."></textarea></label>
+            <button class="button button-primary" type="submit" id="submitAgentButton">Create task</button><p id="agentStatus" class="form-status" role="status" aria-live="polite">Consequential actions remain blocked until explicitly approved. External publishing, deleting, sending, and spending are not configured.</p>
+          </form>
+          <div class="phase9-output-card"><div class="phase9-output-heading"><span>AGENT TASK STATE</span><span id="agentTaskBadge" class="status-badge pending">No task</span></div><div class="phase9-task-controls"><button class="button button-secondary" id="refreshAgentTask" type="button" disabled>Refresh task</button><button class="button button-ghost" id="approveAgentTask" type="button" hidden>Approve consequential action…</button><button class="button button-ghost" id="cancelAgentTask" type="button" disabled>Cancel task</button></div><pre id="agentOutput" aria-live="polite">Task ID, checkpoints, result, warnings, and audit metadata will appear here.</pre>
+          </div>
+          <details class="phase9-future-capabilities"><summary>Future generation capabilities</summary><p>Image generation, video generation, real-time generated animations, and model training are listed as future capabilities only. They return “not configured” until a real approved provider, safety checks, budget limits, and storage policy are installed.</p><button class="button button-secondary" type="button" id="refreshAgentCapabilities">Check configured capabilities</button><pre id="agentCapabilitiesOutput">Capability state has not been loaded.</pre></details>
+
+          <details class="phase9-future-capabilities"><summary>Administrator review queue</summary><p>Only an administrator with the server gateway key can inspect or resolve queued conflicts, evidence gaps, provider failures, and evaluation failures. Queue entries omit prompts, source bodies, and credentials.</p><label class="phase9-admin-key">Gateway admin key<input id="reviewAdminKey" type="password" maxlength="512" autocomplete="off" placeholder="VIBES_GATEWAY_KEY"></label><div class="phase9-task-controls"><button class="button button-secondary" type="button" id="refreshReviewQueue">Load review queue</button></div><p id="reviewQueueStatus" class="form-status" role="status" aria-live="polite"></p><div id="reviewQueueItems" class="phase9-review-items"><span class="phase9-muted">Review queue is not loaded.</span></div></details>
+        </section>
+      </section>
+
+      <section class="view" data-view="keys" id="keysView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">CREDENTIAL CONTROL</div><h1>API <span>keys</span></h1><p>Create limited Vibes app credentials. Secrets are hashed in server storage and shown only once when issued.</p></div><span class="secure-pill"><span>⌑</span> SERVER-SIDE STORAGE</span></div>
+        <div class="security-banner"><span class="banner-icon">✦</span><div><strong>One key per app. One place to revoke it.</strong><p>Keys are bound to one app ID. Grant only the scopes that app needs: registration, heartbeat, model discovery, or AI chat. Do not paste them into public code or commit them to source control.</p></div></div>
+        <div class="key-gate-card" id="keyGateCard"><div class="gate-icon">⌑</div><div class="gate-copy"><span class="card-kicker">ADMINISTRATOR ACCESS</span><h2>Unlock API key management</h2><p>Enter the server's <code>VIBES_GATEWAY_KEY</code>. It stays in this page's memory and is not saved to browser storage.</p></div><form id="adminUnlockForm" class="admin-unlock-form"><label for="gatewayAdminKey">Gateway admin key</label><div class="input-with-action"><input id="gatewayAdminKey" name="gatewayAdminKey" type="password" minlength="1" maxlength="512" autocomplete="current-password" placeholder="Paste server admin key" required><button id="toggleAdminKey" class="input-action" type="button" aria-label="Show key">Show</button></div><button class="button button-primary" type="submit" id="unlockKeysButton">Unlock key manager</button><p id="adminUnlockStatus" class="form-status" aria-live="polite"></p></form></div>
+        <div id="keyManager" hidden>
+          <div class="key-manager-heading"><div><span class="card-kicker">CREATE CREDENTIAL</span><h2>Issue an app API key</h2><p>Generate a unique credential for one Vibes application.</p></div><span class="status-badge online">ADMIN UNLOCKED</span></div>
+          <div class="key-manager-grid">
+            <form class="key-create-card" id="apiKeyForm"><label for="apiKeyName">Key label<input id="apiKeyName" name="name" maxlength="80" required placeholder="e.g. Vibes Vyron X production"></label><label for="apiKeyAppId">Bound app ID<input id="apiKeyAppId" name="appId" maxlength="64" pattern="[A-Za-z0-9][A-Za-z0-9._-]*" required placeholder="e.g. vibes-vyron-x"></label><div class="scope-heading"><span>PERMISSIONS</span><small>Least access needed</small></div><label class="scope-option"><input id="scopeRegister" type="checkbox" checked><span><strong>Register or update this app</strong><small><code>apps:register</code></small></span></label><label class="scope-option"><input id="scopeHeartbeat" type="checkbox" checked><span><strong>Send this app's heartbeat</strong><small><code>apps:heartbeat</code></small></span></label><label class="scope-option"><input id="scopeChat" type="checkbox"><span><strong>Use Quantum AI chat completions</strong><small><code>ai:chat</code> · may incur upstream provider usage</small></span></label><label class="scope-option"><input id="scopeModels" type="checkbox"><span><strong>Discover allowed AI models</strong><small><code>ai:models</code></small></span></label><label class="scope-option"><input id="scopeLearning" type="checkbox"><span><strong>Submit consent-gated feedback</strong><small><code>learning:feedback</code> · tenant-bound and quota-limited</small></span></label><label class="scope-option"><input id="scopeAgents" type="checkbox"><span><strong>Run AI task agents</strong><small><code>agents:run</code> · scoped tasks, budgeted provider use, and approval gates</small></span></label><button class="button button-primary" type="submit" id="createApiKeyButton">✦ Generate API key</button><p id="apiKeyFormStatus" class="form-status" aria-live="polite"></p></form>
+            <div class="key-help-card"><div class="help-illustration">⌑</div><h3>Connect a Vibes app</h3><p>The generated secret belongs only to the selected app ID. Use it from secure app storage and send it over HTTPS. For shared AI inference, enable <code>ai:chat</code> and configure the upstream provider key only on the server.</p><div class="code-sample"><div class="sample-heading"><span>REQUEST HEADER</span><button type="button" id="copyHeaderExample">Copy</button></div><code>X-Vibes-API-Key: YOUR_GENERATED_KEY</code></div><div class="notice-line"><span>ⓘ</span><span>Never use an app API key as the gateway administrator key.</span></div></div>
+          </div>
+          <div class="new-key-reveal" id="newKeyReveal" hidden><div class="reveal-top"><span class="reveal-icon">✓</span><div><strong>API key created successfully</strong><p>Copy the key now. The server does not keep a recoverable copy.</p></div><button type="button" class="icon-button" id="dismissKeyReveal" aria-label="Dismiss key reveal">×</button></div><label for="newApiKeyValue">NEW SECRET — SHOWN ONCE</label><div class="new-key-row"><code id="newApiKeyValue"></code><button class="button button-primary" type="button" id="copyNewApiKey">Copy key</button></div><p class="small-note" id="newKeyUsage"></p></div>
+          <div class="active-keys-panel"><div class="table-heading"><div><span class="card-kicker">CREDENTIAL INVENTORY</span><h2>Issued keys</h2></div><button class="button button-secondary" id="refreshKeys" type="button">↻ Refresh</button></div><div id="apiKeyList" class="api-key-list" aria-live="polite"><div class="registry-empty">Unlock to view keys.</div></div><p class="small-note">Only key prefixes and metadata are returned by the server. Revoking a key stops new uses of that credential immediately.</p></div>
+          <div class="key-manager-footer"><span><i class="tiny-led"></i> Admin credential held in page memory</span><button class="text-button danger-text" id="lockKeysButton" type="button">Lock manager & clear credential</button></div>
+        </div>
+      </section>
+
+      <section class="view" data-view="account" id="accountView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">ACCOUNT & IDENTITY</div><h1>Google <span>Sign-In</span></h1><p>Use your Google account to sign in to the Vibes Quantum console.</p></div><span class="secure-pill"><span>◉</span> OAUTH 2.0 IDENTITY</span></div>
+        <div class="account-layout"><div class="google-card"><div class="google-mark" aria-hidden="true"><span>G</span></div><span class="card-kicker">SIGN IN WITH GOOGLE</span><h2>Your Vibes Quantum session</h2><p>Google credentials are verified by the gateway before a short-lived session is issued. Signing in does not automatically grant administrator privileges.</p><div id="googleButton" class="google-button-slot"><span class="google-placeholder">Checking Google Sign-In configuration…</span></div><p id="googleSignInStatus" class="form-status" aria-live="polite"></p><div id="authUserPanel" class="auth-user-panel" hidden><div class="auth-avatar" id="authUserAvatar">V</div><div class="auth-user-copy"><strong id="authUserName">Signed in</strong><span id="authUserEmail">—</span><small id="authExpiresAt">Session expires —</small></div><button class="button button-ghost" id="signOutButton" type="button">Sign out</button></div><div class="account-divider"><span>SESSION SECURITY</span></div><div class="security-fact"><span>✓</span><div><strong>Server-verified identity</strong><small>Google's signed ID token is verified by the gateway.</small></div></div><div class="security-fact"><span>✓</span><div><strong>Short-lived access token</strong><small>The browser session is temporary and can be revoked by signing out.</small></div></div></div><aside class="setup-card"><div class="setup-card-icon">⚙</div><span class="card-kicker">SERVER CONFIGURATION</span><h3>Before you sign in</h3><p>Google Sign-In needs a Web OAuth client ID configured on the server.</p><ol><li>Set <code>GOOGLE_CLIENT_ID</code> in the server environment.</li><li>Allow <code>https://vibesquantum.duckdns.org</code> under authorized JavaScript origins in Google Cloud.</li><li>Restart the server and reload this page.</li></ol><a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener noreferrer">Open Google Cloud credentials ↗</a><p class="small-note">Never put a Google client secret in this website or a mobile application.</p></aside></div>
+      </section>
+
+      <section class="view" data-view="evaluations" id="evaluationsView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">RELEASE RELIABILITY</div><h1>Quality <span>Lab</span></h1><p>Run reference-backed evaluations, compare with a stable baseline, and inspect release gates before promotion.</p></div><span class="secure-pill">✦ QUALITY GATES</span></div>
+        <div class="quality-grid"><article class="settings-card"><span class="card-kicker">EVALUATION RUN</span><h2>Candidate release</h2><form id="qualityEvalForm" class="quality-form"><label>Engine version<input name="engineVersion" required value="2.7.0-candidate"></label><label>Dataset version<input name="datasetVersion" required value="benchmark-v1"></label><label>Configuration ID<input name="configurationId" required value="default"></label><label>Sample size<input name="sampleSize" type="number" min="1" max="10000" value="100" required></label><label>Candidate score (0–1)<input name="candidateScore" type="number" min="0" max="1" step="0.001" value="0.95" required></label><label>Previous stable score<input name="baselineScore" type="number" min="0" max="1" step="0.001" value="0.96"></label><label>Critical failures<input name="criticalFailures" type="number" min="0" value="0"></label><label>Average latency (ms)<input name="avgLatencyMs" type="number" min="0" value="1200"></label><label>Provider failures<input name="providerFailures" type="number" min="0" value="0"></label><label>Estimated cost<input name="estimatedCost" type="number" min="0" step="0.0001" value="0"></label><label class="check-row"><input name="privacySecurityPassed" type="checkbox" checked> Privacy/security checks passed</label><p class="small-note">This submits metadata only; attach expert-reviewed benchmark cases through the API. A UI-entered score is not proof of correctness.</p><button class="button button-primary" type="submit">Run quality gate</button><p id="qualityEvalStatus" class="form-status" aria-live="polite"></p></form></article>
+        <article class="settings-card"><span class="card-kicker">MEMORY HEALTH</span><h2>Safe maintenance</h2><p>Preview before changes. Age alone never deletes approved facts; duplicate suggestions and uncertain claims need review.</p><label>Storage quota (records)<input id="memoryQuota" type="number" min="1" max="1000000" value="10000"></label><button class="button button-secondary" id="memoryPreviewButton" type="button">Preview maintenance</button><button class="button button-primary" id="memoryMaintainButton" type="button" disabled>Confirm safe maintenance</button><p id="memoryStatus" class="form-status" aria-live="polite"></p><div id="memoryPreviewOutput" class="quality-output" aria-live="polite">No preview created.</div></article></div>
+        <article class="settings-card quality-history-card"><div class="table-heading"><div><span class="card-kicker">TRACEABLE RELEASES</span><h2>Evaluation history</h2></div><button class="button button-secondary" id="refreshQualityHistory" type="button">↻ Refresh</button></div><div id="qualityHistoryOutput" class="quality-output">Unlock admin access and refresh to load history.</div><h2>Human review queue</h2><div id="qualityReviewOutput" class="quality-output">Pending reviews appear here.</div></article>
+      </section>
+      <section class="view" data-view="security" id="securityView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 13 · PROTECTION & ACCOUNTABILITY</div><h1>Security <span>Center</span></h1><p>Review audit integrity, encryption configuration, access protection, and incident readiness.</p></div><span class="secure-pill">◈ SECURITY CONTROLS</span></div>
+        <div class="security-hero"><div class="security-orb">◈</div><div><span class="card-kicker">DEFENSE IN DEPTH</span><h2>Security status is configuration-dependent</h2><p>This console never claims encryption, rotation, or audit integrity is active until the server confirms it. A missing key or integrity mismatch must raise an explicit warning, not an empty dashboard.</p></div></div>
+        <div class="security-grid">
+          <article class="settings-card"><span class="card-kicker">ENCRYPTION AT REST</span><h2>AES-256-GCM</h2><p>Use vetted platform crypto with a 32-byte key supplied outside the database. Keep TLS enabled in the deployment proxy for data in transit.</p><div class="code-card"><div class="code-card-head"><span>Shell · key generation example</span><button class="copy-code-btn" type="button">Copy code</button></div><pre><code class="language-bash">openssl rand -hex 32</code></pre></div><p class="small-note">Store the resulting key in a managed secret store or protected environment. Never paste it into the browser or commit it.</p></article>
+          <article class="settings-card"><span class="card-kicker">APPEND-ONLY AUDIT</span><h2>Integrity chain</h2><p>Audit entries should chain each event to the previous digest. This detects edits in the chain; it is not a blockchain and is not tamper-proof against an attacker who can rewrite the entire store.</p><div class="audit-status" id="auditStatus" role="status"><span class="status-dot"></span><span>Live integrity status requires authenticated server check.</span></div><button class="button button-secondary" id="checkAuditIntegrity" type="button">Check audit integrity</button><p class="form-status" id="auditIntegrityResult" aria-live="polite"></p></article>
+          <article class="settings-card"><span class="card-kicker">LOGIN DEFENSE</span><h2>Progressive throttling</h2><p>Use progressive delays and temporary lockouts for repeated failures, generic public errors, and a separate secure recovery flow. Alert administrators without logging credentials or sensitive request bodies.</p><ul class="security-checklist"><li>Login and permission changes audited</li><li>Exports, deletions, approvals and provider changes audited</li><li>Tokens and sensitive payloads redacted</li><li>Recovery and restore drills documented</li></ul></article>
+          <article class="settings-card"><span class="card-kicker">INCIDENT RESPONSE</span><h2>Contain, preserve, recover</h2><ol class="incident-steps"><li>Restrict affected credentials and preserve logs.</li><li>Rotate secrets from a trusted device and inspect access history.</li><li>Restore from a verified backup; validate audit-chain continuity.</li><li>Record scope, remediation, and follow-up tests.</li></ol><p class="small-note">Optional decoy records must be isolated from normal retrieval, training, and user answers.</p></article>
+        </div>
+      </section>
+
+      <section class="view" data-view="personal-memory" id="personalMemoryView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 14 · USER-CONTROLLED PERSONALIZATION</div><h1>Personal <span>Memory</span></h1><p>Review reusable preferences separately from conversation history. Memory is scoped to the signed-in account.</p></div><span class="secure-pill">◎ YOUR DATA</span></div>
+        <div class="research-security-note"><strong>Private by design</strong><span>Only store useful, permitted facts with purpose, source, timestamp and confidence. Do not treat inferred emotions, identity, or relationships as certain facts.</span></div>
+        <div class="memory-controls-grid">
+          <article class="settings-card"><span class="card-kicker">MEMORY CONTROLS</span><h2>Your saved preferences</h2><p>Sign in to inspect, correct, export or delete personal memory. Account isolation and deletion behavior must be enforced server-side, not by hiding UI elements.</p><div class="memory-action-row"><button class="button button-secondary" id="loadPersonalMemory" type="button">Load my memory</button><button class="button button-secondary" id="exportPersonalMemory" type="button" disabled>Export JSON</button></div><div id="personalMemoryList" class="memory-list" aria-live="polite">Sign in, then load your personal memory.</div><p id="personalMemoryStatus" class="form-status" role="status" aria-live="polite"></p></article>
+          <article class="settings-card"><span class="card-kicker">ADD A MEMORY</span><h2>Choose what to save</h2><form id="personalMemoryForm" class="quality-form"><label>Preference or useful fact<textarea id="personalMemoryText" rows="3" maxlength="1200" required placeholder="Example: I prefer concise explanations with code examples."></textarea></label><label>Purpose<select id="personalMemoryPurpose"><option value="response_preference">Response preference</option><option value="active_project">Active project context</option><option value="learning_goal">Learning goal</option></select></label><label class="check-row"><input type="checkbox" id="personalMemoryConsent" required> I want to save this to my personal memory</label><button class="button button-primary" type="submit">Save memory</button></form><p class="small-note">Memory API requires a valid signed-in session. Global knowledge and verified facts are not replaced by personal preferences.</p></article>
+        </div>
+      </section>
+
+      <section class="view" data-view="code-studio" id="codeStudioView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">VIBES QUANTUM · DEVELOPER EXPERIENCE</div><h1>Code <span>Studio</span></h1><p>Readable code blocks with a dedicated monospace font and one-click copy. Execution remains isolated and disabled until a sandbox is configured.</p></div><span class="secure-pill">⌘ DEVELOPER TOOLS</span></div>
+        <div class="code-studio-layout"><article class="settings-card code-demo-card"><div class="code-studio-toolbar"><div><span class="card-kicker">CODE BLOCK</span><h2>Kotlin · Android</h2></div><button class="button button-primary copy-code-btn" type="button">Copy code</button></div><pre class="premium-code"><code class="language-kotlin">data class CouncilResult(
+    val answer: String,
+    val confidence: String,
+    val evidence: List&lt;String&gt;,
+    val needsReview: Boolean = false
+)
+
+fun shouldRequestReview(result: CouncilResult): Boolean =
+    result.needsReview || result.evidence.isEmpty()</code></pre><p class="small-note">Copy-only blocks copy code text, not surrounding UI or explanations.</p></article>
+        <article class="settings-card terminal-card"><div class="code-studio-toolbar"><div><span class="card-kicker">ISOLATED EXECUTION</span><h2>Linux test terminal</h2></div><span class="status-badge pending">Sandbox not verified</span></div><div class="terminal-window"><div class="terminal-topline"><span></span><span></span><span></span><label>vibes-sandbox · restricted</label></div><div class="terminal-output" id="terminalOutput" aria-live="polite"><p>Vibes Quantum test terminal</p><p>Execution is unavailable until an isolated runtime is configured and health-checked.</p><p class="terminal-muted">No host shell commands will be executed from this browser.</p></div></div><label for="terminalCommand">Example command (copy only)</label><div class="terminal-command-row"><input id="terminalCommand" class="terminal-input" value="./gradlew test" readonly aria-label="Example command"><button class="button button-secondary" id="copyTerminalCommand" type="button">Copy</button></div><button class="button button-ghost" type="button" id="terminalSafetyInfo">Why is execution disabled?</button><p id="terminalStatus" class="form-status" aria-live="polite"></p></article></div>
+        <article class="settings-card"><span class="card-kicker">ANIMATED UI PRINCIPLES</span><h2>Fast, accessible, calm</h2><p>Motion respects reduced-motion preferences. Copy feedback is announced to screen readers, and code uses a distinct monospace font with horizontal scrolling instead of shrinking text.</p></article>
+      </section>
+
+      <section class="view" data-view="connections" id="connectionsView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">SERVER-SIDE INTEGRATIONS</div><h1>API <span>connections</span></h1><p>Provider credentials stay on the server. This panel reports only endpoints actually exposed by this deployment.</p></div><button class="button button-secondary" id="checkConnections" type="button">Check endpoints</button></div>
+        <div class="settings-grid"><article class="settings-card"><span class="card-kicker">GATEWAY HEALTH</span><h2>Health endpoint</h2><p id="connectionHealth" role="status" aria-live="polite">Not checked yet.</p></article><article class="settings-card"><span class="card-kicker">APP DIRECTORY</span><h2>Registered apps API</h2><p id="connectionApps" role="status" aria-live="polite">Not checked yet.</p></article><article class="settings-card full-span"><span class="card-kicker">PROVIDER SECRETS</span><h2>Secret-safe configuration</h2><p>Provider API keys must be configured as server environment variables or in a secret manager. This browser does not collect or return raw provider keys. A connection test is only available when a server-side test endpoint is implemented and authenticated.</p><p class="small-note">Provider connection test endpoint: <code>not exposed by this deployment</code>. No connection is reported as successful until a real server check returns success.</p></article></div>
+      </section>
+      <section class="view" data-view="feedback" id="feedbackView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">HUMAN-IN-THE-LOOP</div><h1>Feedback <span>panel</span></h1><p>Inspect feedback only through an authenticated, permission-scoped backend endpoint.</p></div><button class="button button-secondary" id="checkFeedbackApi" type="button">Check feedback API</button></div>
+        <article class="settings-card"><span class="card-kicker">BACKEND STATUS</span><h2>Feedback queue</h2><p id="feedbackApiStatus" role="status" aria-live="polite">Not checked yet.</p><p class="small-note">The current gateway does not expose a dedicated paginated feedback-review endpoint to this panel. This page will not fabricate queue entries or sample counts.</p></article>
+      </section>
+      <section class="view" data-view="usage" id="usageView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">QUOTA & ACCOUNTING</div><h1>Usage <span>overview</span></h1><p>Usage values must come from persisted server accounting, never browser estimates presented as live facts.</p></div><button class="button button-secondary" id="checkUsageApi" type="button">Check usage API</button></div>
+        <div class="stats-grid"><article class="stat-card"><span class="stat-label">REQUEST COUNT</span><strong id="usageRequests">—</strong><span class="stat-foot">Not exposed by current backend</span></article><article class="stat-card"><span class="stat-label">TOKEN USAGE</span><strong id="usageTokens">—</strong><span class="stat-foot">Not exposed by current backend</span></article><article class="stat-card"><span class="stat-label">PROVIDER COST</span><strong id="usageCost">—</strong><span class="stat-foot">Not exposed by current backend</span></article><article class="stat-card"><span class="stat-label">QUOTA STATUS</span><strong id="usageQuota">Unknown</strong><span class="stat-foot">No live quota endpoint configured</span></article></div><p id="usageApiStatus" class="form-status" role="status" aria-live="polite">Usage accounting is unavailable until the server exposes an authenticated usage endpoint.</p>
+      </section>
+      <section class="view" data-view="quality" id="qualityView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 17 · LANGUAGE, ACCESSIBILITY &amp; QUALITY</div><h1>Inclusive <span>quality</span></h1><p>Language coverage, source provenance, glossary review and domain-safety policies are measured separately.</p></div></div>
+        <div class="quality-status-banner"><strong>Review state matters.</strong><span>Shona and Ndebele strings are progressive drafts, not native-approved translations. Important claims and user-facing text require independent native-speaker review before production sign-off.</span></div>
+        <section class="settings-card full-span"><span class="card-kicker">LANGUAGE COVERAGE</span><h2>Measured support by language</h2><p>Metadata and aliases are supported for all three languages. UI coverage is a manually maintained estimate of catalog coverage, not a model accuracy score.</p>
+          <div class="table-scroll" role="region" aria-label="Language support metrics" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Language</th><th scope="col">Metadata</th><th scope="col">Search aliases</th><th scope="col">UI catalog</th><th scope="col">Native review</th></tr></thead><tbody>
+          <tr><th scope="row">English (en)</th><td>Supported</td><td>Supported</td><td>100% baseline catalog</td><td>Baseline</td></tr><tr><th scope="row">Shona / ChiShona (sn)</th><td>Supported</td><td>Supported</td><td>22% estimated · staged</td><td>Required · not reviewed</td></tr><tr><th scope="row">Ndebele / isiNdebele (nd)</th><td>Supported</td><td>Supported</td><td>22% estimated · staged</td><td>Required · not reviewed</td></tr></tbody></table></div>
+        </section>
+        <div class="settings-grid phase-top-gap">
+          <section class="settings-card"><span class="card-kicker">EVIDENCE PROVENANCE</span><h2>Original language stays visible</h2><p>Evidence records retain the source language and original source. Translations are separate records with target language, translation kind (machine or human), and review status. A machine translation must be labeled, and translation should never overwrite the source.</p></section>
+          <section class="settings-card"><span class="card-kicker">REVIEWED TERMINOLOGY</span><h2>Glossary workflow</h2><p>The seed glossary contains high-risk terms for health, farming chemicals, finance, faith, education and law. No translation is marked approved until both domain review and native-language review are recorded. Until then, retain the original term beside an explanation.</p></section>
+        </div>
+        <section class="settings-card full-span phase-top-gap"><span class="card-kicker">CONFIGURABLE DOMAIN PLUGINS</span><h2>Policy profiles</h2><div class="table-scroll" role="region" aria-label="Domain policy profiles" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Domain</th><th scope="col">Impact</th><th scope="col">Evidence rule</th><th scope="col">Extra requirement</th></tr></thead><tbody>
+        <tr><th scope="row">Health</th><td>High</td><td>Reliable citations + uncertainty</td><td>Qualified clinician where appropriate</td></tr><tr><th scope="row">Farming chemicals</th><td>High</td><td>Product label and local guidance</td><td>Agronomist/extension support; never guess dose</td></tr><tr><th scope="row">Finance</th><td>High</td><td>Reliable citations + assumptions</td><td>Disclose material risks; licensed help for consequential decisions</td></tr><tr><th scope="row">Legal</th><td>High</td><td>Reliable citations + uncertainty</td><td>Jurisdiction and qualified legal help</td></tr><tr><th scope="row">Faith</th><td>Medium</td><td>Name source/translation when relevant</td><td>Respect differing traditions and interpretations</td></tr><tr><th scope="row">Education</th><td>Medium</td><td>Official syllabus where relevant</td><td>Separate explanation from official assessment wording</td></tr><tr><th scope="row">General</th><td>Low</td><td>Escalate for important claims</td><td>Use uncertainty when claim confidence is limited</td></tr></tbody></table></div><p class="small-note">These are minimum safety gates, not proof an answer is correct. Human expert review and task-specific testing are still required.</p></section>
+        <section class="settings-card full-span phase-top-gap"><span class="card-kicker">ACCESSIBILITY CHECKLIST</span><h2>Keyboard, text and non-visual use</h2><ul class="phase-checklist"><li>Semantic navigation, labeled controls, visible focus indicators, and keyboard Escape-to-close navigation.</li><li>Screen-reader status announcements; table alternatives for key metrics and policy summaries.</li><li>Browser zoom and text resizing remain enabled; layouts wrap and scroll horizontally for wide data tables.</li><li>Reduced-motion settings disable non-essential animation and smooth scrolling.</li><li>Contrast and real screen-reader behavior still require a manual audit with browser tools and assistive technology.</li></ul></section>
+      </section>
+
+      <section class="view" data-view="operations" id="operationsView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">PHASE 18 · OPERATIONS &amp; COST CONTROL</div><h1>Runtime <span>observability</span></h1><p>Content-free latency, errors, resource measurements and persisted kill switches. Metrics that are not instrumented remain explicitly unavailable.</p></div><button class="button button-secondary" id="refreshOpsMetrics" type="button">Refresh metrics</button></div>
+        <div class="settings-card full-span ops-auth-card"><span class="card-kicker">ADMIN-ONLY OPERATIONS</span><h2>Unlock operational metrics</h2><p>Use the server gateway admin key. It stays in this page's memory only and is not written to browser storage.</p><form id="opsUnlockForm" class="ops-auth-row"><label for="opsAdminKey">Gateway admin key<input id="opsAdminKey" type="password" maxlength="512" autocomplete="current-password" required placeholder="Paste VIBES_GATEWAY_KEY"></label><button class="button button-primary" type="submit">Load metrics</button></form><p id="opsStatus" class="form-status" role="status" aria-live="polite">Locked — no metrics loaded.</p></div>
+        <div id="opsPanels" hidden>
+          <section class="settings-card full-span ops-alert-panel"><h2>Operational alerts</h2><ul id="opsAlertList" aria-live="polite"><li>No alerts loaded.</li></ul></section>
+          <div class="stats-grid ops-stats-grid"><article class="stat-card"><span class="stat-label">MEASURED REQUESTS</span><strong id="opsRequestCount">—</strong><span class="stat-foot">Since process start</span></article><article class="stat-card"><span class="stat-label">PROVIDER CALLS</span><strong id="opsProviderCount">—</strong><span class="stat-foot" id="opsProviderErrorFoot">Measured at provider headers</span></article><article class="stat-card"><span class="stat-label">AVG PROVIDER LATENCY</span><strong id="opsProviderLatency">—</strong><span class="stat-foot">Milliseconds · measured</span></article><article class="stat-card"><span class="stat-label">JVM HEAP</span><strong id="opsHeapUsed">—</strong><span class="stat-foot" id="opsHeapFoot">Source pending</span></article></div>
+          <section class="settings-card full-span phase-top-gap"><div class="ops-section-header"><div><span class="card-kicker">EMERGENCY CONTROLS</span><h2>Kill switches</h2></div><span class="status-badge pending">Persistent · admin only</span></div><p>Provider routing blocks new inference requests. Background learning blocks new manual source-learning runs. Disabling either does not terminate work already in flight.</p><form id="opsSwitchForm" class="ops-switch-form"><label class="ops-switch-row"><input id="opsProviderEnabled" type="checkbox"><span><strong>Provider routing enabled</strong><small>Allow new paid/model-provider requests</small></span></label><label class="ops-switch-row"><input id="opsLearningEnabled" type="checkbox"><span><strong>Background/source learning enabled</strong><small>Allow new bounded source-learning runs; off by default</small></span></label><button type="submit" class="button button-primary">Save kill switches</button><p id="opsSwitchStatus" class="form-status" role="status" aria-live="polite"></p></form></section>
+          <section class="settings-card full-span phase-top-gap"><span class="card-kicker">HTTP ROUTE METRICS</span><h2>Latency and error rates</h2><p>Route names are normalized; p95 is calculated from the last 512 measured requests per route. No request bodies are retained.</p><div class="table-scroll" role="region" aria-label="HTTP route latency metrics" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Method / route</th><th scope="col">Requests</th><th scope="col">Errors</th><th scope="col">Error rate</th><th scope="col">Average ms</th><th scope="col">p95 ms</th><th scope="col">Max ms</th></tr></thead><tbody id="opsRouteRows"><tr><td colspan="7">Load metrics to view measurements.</td></tr></tbody></table></div></section>
+          <section class="settings-card full-span phase-top-gap"><span class="card-kicker">RESOURCE SOURCE &amp; UNITS</span><h2>Resource metrics</h2><div class="table-scroll" role="region" aria-label="Resource metrics with units and sources" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Metric</th><th scope="col">Value</th><th scope="col">Unit</th><th scope="col">State</th><th scope="col">Source / note</th></tr></thead><tbody id="opsResourceRows"><tr><td colspan="5">Load metrics to view measurements.</td></tr></tbody></table></div></section>
+          <section class="settings-card full-span phase-top-gap"><span class="card-kicker">LIVE LEARNING SESSION</span><h2>Source-learning activity</h2><p id="opsSessionSummary" role="status" aria-live="polite">No live session snapshot loaded.</p><div class="table-scroll" role="region" aria-label="Latest source-learning session" tabindex="0"><table class="phase-table"><thead><tr><th scope="col">Status / phase</th><th scope="col">Requests</th><th scope="col">Downloaded bytes</th><th scope="col">Candidates</th><th scope="col">Checkpoint</th></tr></thead><tbody id="opsSessionRows"><tr><td colspan="5">Session metrics unavailable.</td></tr></tbody></table></div><p class="small-note">RAM is the JVM's measured heap for the process, not per-job RAM. Cache, persistent queue depth and database latency are marked unavailable until a real cache/queue/database is instrumented.</p></section>
+          <p id="opsUpdatedAt" class="small-note">No metrics loaded.</p>
+        </div>
+      </section>
+
+      <section class="view" data-view="help" id="helpView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">DEVELOPER DOCUMENTATION</div><h1>Help & <span>API guide</span></h1><p>Versioned gateway contract, permissions and safe integration practices.</p></div></div>
+        <div class="settings-grid"><article class="settings-card"><h2>Authentication</h2><p>App routes use <code>X-Vibes-API-Key</code>. Keys are app-bound and must be sent over HTTPS. Never place gateway admin or provider keys in browser code or Android resources.</p></article><article class="settings-card"><h2>Common routes</h2><div class="contract-row"><span class="method post-method">POST</span><code>/api/v1/apps</code><span>Register the key's bound app</span></div><div class="contract-row"><span class="method put-method">PUT</span><code>/api/v1/apps/{appId}/heartbeat</code><span>Update last-seen status</span></div><div class="contract-row"><span class="method get-method">GET</span><code>/api/v1/apps</code><span>Discover app metadata</span></div></article><article class="settings-card full-span"><h2>Scopes, errors and rate limits</h2><p>Grant only the required scopes, such as <code>apps:register</code>, <code>apps:heartbeat</code>, <code>ai:chat</code>, <code>ai:models</code>, <code>learning:feedback</code>, or <code>agents:run</code>. Treat HTTP 401/403 as authentication/permission failures, 429 as throttling, and 5xx as temporary server errors. Honor <code>Retry-After</code> if present and use bounded exponential backoff.</p><p class="small-note">Exact quotas depend on server configuration; no fixed rate limit is promised here. Breaking contract changes must use a new API version.</p></article></div>
+      </section>
+
+      <section class="view" data-view="settings" id="settingsView" hidden>
+        <div class="page-heading"><div><div class="eyebrow">CONFIGURATION REFERENCE</div><h1>Settings <span>& docs</span></h1><p>Use the canonical Vibes Quantum URL in connected Vibes applications.</p></div><span class="secure-pill"><span>⚙</span> GATEWAY SETTINGS</span></div>
+        <div class="settings-grid">
+          <article class="settings-card"><span class="settings-card-icon">↗</span><span class="card-kicker">PUBLIC URL</span><h2>Vibes Quantum gateway</h2><p>Use this exact base URL in integrations and account configuration.</p><div class="url-code-row"><code id="canonicalUrl">https://vibesquantum.duckdns.org</code><button class="button button-secondary" type="button" id="copySettingsUrl">Copy</button></div><a href="https://vibesquantum.duckdns.org/" target="_blank" rel="noopener noreferrer">Open public gateway ↗</a><p class="small-note">Domain changes in files do not configure DNS or deploy the service. Your host must route HTTPS traffic to the Ktor server.</p></article>
+          <article class="settings-card"><span class="settings-card-icon">⌑</span><span class="card-kicker">SERVER SECRETS</span><h2>Environment variables</h2><div class="env-list"><div><code>VIBES_GATEWAY_KEY</code><span>Admin access and registry management</span></div><div><code>VIBES_API_KEYS_FILE</code><span>Persistent, hashed app credentials</span></div><div><code>VIBES_REGISTRY_FILE</code><span>Connected app records</span></div><div><code>GOOGLE_CLIENT_ID</code><span>Google Sign-In Web OAuth client ID</span></div><div><code>VIBES_SOURCE_CONNECTORS_ENABLED</code><span>Explicit opt-in for manual source research</span></div><div><code>VIBES_BRAVE_SEARCH_API_KEY / VIBES_YOUTUBE_API_KEY</code><span>Optional server-only connector credentials</span></div><div><code>VIBES_REDDIT_CLIENT_ID / VIBES_REDDIT_CLIENT_SECRET</code><span>Optional Reddit OAuth credentials on the server only</span></div><div><code>VIBES_SOURCE_MAX_REQUESTS_PER_RUN / VIBES_SOURCE_MAX_BYTES_PER_RUN</code><span>Hard research budgets per manual run</span></div><div><code>VIBES_LEARNING_STORE_FILE</code><span>Consent-gated tenant learning signals, retention, and subject deletion records</span></div></div><p class="small-note">Store secrets in the server environment, not in HTML, JavaScript or source control.</p></article>
+          <article class="settings-card full-span"><span class="settings-card-icon">⌘</span><span class="card-kicker">API CONTRACT</span><h2>Connect an application</h2><p>Issue an app-specific key in API Keys. Then have the connected app register and send heartbeat requests to the following paths using the <code>X-Vibes-API-Key</code> header.</p><div class="contract-row"><span class="method post-method">POST</span><code>/api/v1/apps</code><span>Register/update the key's bound app ID</span></div><div class="contract-row"><span class="method put-method">PUT</span><code>/api/v1/apps/{appId}/heartbeat</code><span>Update last-seen status</span></div><div class="contract-row"><span class="method get-method">GET</span><code>/api/v1/apps</code><span>Discover public app metadata</span></div><button class="button button-primary" type="button" data-go-view="api">Open API explorer →</button></article>
+        </div>
+      </section>
+    </main>
+    <footer class="workspace-footer"><span>© <span id="year">2026</span> Vibes Quantum</span><span>Connected by design <i class="footer-spark">✦</i></span><a href="https://vibesquantum.duckdns.org/" target="_blank" rel="noopener noreferrer">vibesquantum.duckdns.org</a></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

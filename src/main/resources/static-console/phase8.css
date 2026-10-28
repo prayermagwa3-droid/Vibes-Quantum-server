@@ -1,0 +1,54 @@
+/* Phase 8 dashboard refinements: responsive privacy console, micro-motion, and live streaming feedback. */
+:root { --motion-fast: 150ms; --motion-ui: 220ms; }
+.view { transform-origin: 50% 12%; }
+.drawer-link:focus-visible, .button:focus-visible, .text-button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid #9a8cff; outline-offset: 3px; }
+.learning-security-note { border-color: rgba(93, 194, 166, .26); background: linear-gradient(110deg, rgba(29, 104, 83, .16), rgba(19, 25, 43, .7)); }
+.learning-security-note strong { color: #a7f1d2; }
+.learning-target-card { margin-bottom: 14px; }
+.learning-target-form { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(180px, auto); gap: 10px 14px; align-items: end; }
+.learning-target-form label, .stream-form label { display: grid; gap: 7px; color: #aab5d0; font-size: 10px; font-weight: 650; }
+.learning-target-form .form-status { grid-column: 1 / -1; margin: 0; }
+.learning-stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.learning-policy-grid { display: grid; grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 14px; align-items: start; }
+.learning-category-list { display: grid; gap: 5px; margin: 4px 0 8px; }
+.learning-category-list .scope-heading { display: block; margin-bottom: 4px; color: #838eae; font-size: 9px; letter-spacing: 1.2px; font-weight: 850; }
+.learning-policy-numbers { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 9px; }
+.learning-feedback-top { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; justify-content: space-between; margin-bottom: 9px; }
+.learning-type-pill, .learning-review-state { display: inline-flex; align-items: center; padding: 5px 8px; border-radius: 6px; background: rgba(109, 99, 201, .14); color: #c7c0ff; border: 1px solid rgba(130, 116, 244, .2); text-transform: capitalize; font-size: 9px; font-weight: 800; }
+.learning-review-state { background: rgba(85, 168, 132, .1); border-color: rgba(85,168,132,.18); color: #9de2c4; }
+.learning-review-state.pending { background: rgba(231, 173, 71, .1); border-color: rgba(231,173,71,.2); color: #f1ce85; }
+.learning-privacy-summary { margin-top: 15px; padding: 15px; border: 1px solid #2a324c; border-radius: 11px; background: rgba(9,13,24,.55); }
+.learning-privacy-summary strong { color: #dce3fc; font-size: 11px; }
+.learning-privacy-summary p { margin: 7px 0 0; color: #8996b7; font-size: 10px; line-height: 1.7; }
+.stream-playground { margin-top: 16px; overflow: hidden; }
+.stream-playground .research-card-heading { align-items: flex-start; }
+.stream-playground .research-card-heading p { margin: 6px 0 0; color: #8f9bbc; font-size: 10px; line-height: 1.6; }
+.streaming-status { display: inline-flex; align-items: center; gap: 7px; flex: none; border: 1px solid #2c3651; padding: 7px 9px; border-radius: 100px; color: #9eabc9; font-size: 9px; background: rgba(10,14,27,.7); }
+.streaming-status i { width: 6px; height: 6px; border-radius: 50%; background: #71809f; }
+.streaming-status.live { color: #a5f1d4; border-color: #2c624f; }
+.streaming-status.live i { background: #61d9a6; animation: phase8-pulse 1.25s ease-in-out infinite; }
+.streaming-status.done i { background: #61d9a6; }
+.streaming-status.error i { background: #ff849b; }
+.stream-form { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(180px, .7fr); gap: 12px; align-items: end; }
+.stream-prompt-label { grid-column: 1 / -1; }
+.stream-form-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; grid-column: 1 / -1; }
+.stream-form-actions .button { width: auto; margin-top: 0; }
+.stream-form .form-status { grid-column: 1 / -1; margin: 0; line-height: 1.6; }
+.stream-output-shell { margin-top: 14px; border: 1px solid #29324d; border-radius: 12px; overflow: hidden; background: #090d18; }
+.stream-output-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 13px; border-bottom: 1px solid #252d45; color: #7e8bad; font-size: 9px; font-weight: 850; letter-spacing: 1.1px; }
+.stream-output-top span:last-child { letter-spacing: 0; font-weight: 600; }
+.stream-output { min-height: 135px; max-height: 420px; overflow: auto; margin: 0; padding: 15px; white-space: pre-wrap; overflow-wrap: anywhere; color: #d6dff9; font: 11px/1.8 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.stream-output.streaming::after { display: inline-block; width: 7px; height: 14px; margin-left: 3px; vertical-align: -2px; background: #9887ff; content: ''; animation: phase8-caret .75s steps(2, start) infinite; }
+.stream-output.error { color: #ffacbb; }
+.stream-playground .button:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.button-loading { position: relative; }
+.button-loading::after { content: ''; width: 11px; height: 11px; border: 2px solid rgba(255,255,255,.3); border-top-color: white; border-radius: 50%; animation: phase8-spin .7s linear infinite; }
+.source-candidate-card, .research-card, .stat-card, .dashboard-card, .settings-card { transition: border-color var(--motion-ui) ease, box-shadow var(--motion-ui) ease, transform var(--motion-ui) ease; }
+.source-candidate-card:hover { border-color: #414b6b; }
+.button-primary:active:not(:disabled) { transform: translateY(0) scale(.985); }
+@keyframes phase8-pulse { 0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(97,217,166,.3); } 50% { opacity: .72; box-shadow: 0 0 0 5px rgba(97,217,166,0); } }
+@keyframes phase8-caret { to { visibility: hidden; } }
+@keyframes phase8-spin { to { transform: rotate(360deg); } }
+@media(max-width:950px) { .learning-policy-grid { grid-template-columns: 1fr; } .learning-stats-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media(max-width:600px) { .learning-target-form, .stream-form { grid-template-columns: 1fr; } .learning-policy-numbers { grid-template-columns: 1fr; } .stream-prompt-label, .stream-form-actions, .stream-form .form-status { grid-column: 1; } .stream-playground .research-card-heading { flex-direction: column; } .stream-output { min-height: 120px; max-height: 50vh; padding: 12px; } }
+@media(prefers-reduced-motion:reduce) { .view, .streaming-status.live i, .stream-output.streaming::after, .button-loading::after { animation: none !important; } .source-candidate-card, .research-card, .stat-card, .dashboard-card, .settings-card, .button { transition: none !important; } }

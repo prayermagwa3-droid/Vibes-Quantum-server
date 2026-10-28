@@ -1,0 +1,27 @@
+{
+  "decision": "DENY",
+  "failed_or_missing_critical_checks": [
+    "integration_tests",
+    "security_tests",
+    "staging_smoke",
+    "baseline_comparison",
+    "rollback_drill",
+    "baseline_comparison.quality_score baseline/candidate values unavailable",
+    "baseline_comparison.p95_latency_ms baseline/candidate values unavailable",
+    "baseline_comparison.cost_per_1000_requests baseline/candidate values unavailable"
+  ],
+  "manifest_errors": [],
+  "baseline_comparison": {
+    "quality_score": {
+      "status": "unavailable"
+    },
+    "p95_latency_ms": {
+      "status": "unavailable"
+    },
+    "cost_per_1000_requests": {
+      "status": "unavailable"
+    }
+  },
+  "created_utc": "2026-10-20T11:42:43+00:00",
+  "note": "Eligibility is not deployment. Human approval and a staging rollback drill are still required."
+}

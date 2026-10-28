@@ -1,0 +1,26 @@
+{
+  "dataset_version": "example-v1",
+  "cases": [
+    {
+      "id": "math-001",
+      "category": "reasoning",
+      "prompt": "What is 6 multiplied by 7?",
+      "reference": "42",
+      "critical": true
+    },
+    {
+      "id": "code-001",
+      "category": "coding",
+      "prompt": "What command prints hello in Python?",
+      "reference": "print hello",
+      "critical": false
+    },
+    {
+      "id": "memory-001",
+      "category": "memory",
+      "prompt": "Why store a source reference with a memory?",
+      "reference": "To retain provenance and traceability",
+      "critical": false
+    }
+  ]
+}

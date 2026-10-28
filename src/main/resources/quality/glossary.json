@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "seed_glossary_requires_domain_review",
+  "terms": [
+    {"domain":"health","term":"diagnosis","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Do not auto-translate without native and domain expert review."},
+    {"domain":"farming_chemicals","term":"pre-harvest interval","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Retain the source term and explain it until a locally reviewed translation exists."},
+    {"domain":"finance","term":"interest rate","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Translation depends on the financial context; keep the original term beside explanation."},
+    {"domain":"faith","term":"scripture translation","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Name the translation/version; interpretation must not be conflated with translation."},
+    {"domain":"education","term":"syllabus objective","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Preserve the official syllabus wording when exam-aligned."},
+    {"domain":"legal","term":"jurisdiction","language":"en","approved_translation":null,"review_status":"unreviewed","notes":"Never infer a jurisdiction from the language alone."}
+  ]
+}

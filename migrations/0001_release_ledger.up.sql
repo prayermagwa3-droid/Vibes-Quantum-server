@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS release_metadata (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL,
+  updated_utc TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

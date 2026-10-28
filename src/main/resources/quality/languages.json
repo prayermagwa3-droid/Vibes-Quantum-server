@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "default_language": "en",
+  "languages": [
+    {"code":"en","name":"English","native_name":"English","stage":"baseline","metadata_supported":true,"search_aliases_supported":true,"ui_localization_coverage":1.0,"native_review_status":"baseline_reviewed","reviewer_required_for_important_claims":false},
+    {"code":"sn","name":"Shona","native_name":"ChiShona","stage":"progressive_draft","metadata_supported":true,"search_aliases_supported":true,"ui_localization_coverage":0.22,"native_review_status":"not_reviewed","reviewer_required_for_important_claims":true},
+    {"code":"nd","name":"Ndebele","native_name":"isiNdebele","stage":"progressive_draft","metadata_supported":true,"search_aliases_supported":true,"ui_localization_coverage":0.22,"native_review_status":"not_reviewed","reviewer_required_for_important_claims":true}
+  ],
+  "aliases": {
+    "english":"en", "eng":"en", "shona":"sn", "chishona":"sn", "chi-shona":"sn", "ndebele":"nd", "isindebele":"nd", "isi-ndebele":"nd"
+  },
+  "ui_labels": {
+    "en": {
+      "overview":{"text":"Overview","review_status":"baseline_reviewed"},
+      "apps":{"text":"Connected apps","review_status":"baseline_reviewed"},
+      "source_learning":{"text":"Source learning","review_status":"baseline_reviewed"},
+      "curriculum":{"text":"Curriculum lab","review_status":"baseline_reviewed"},
+      "privacy_learning":{"text":"Privacy learning","review_status":"baseline_reviewed"},
+      "security":{"text":"Security & audit","review_status":"baseline_reviewed"},
+      "api":{"text":"API explorer","review_status":"baseline_reviewed"},
+      "api_connections":{"text":"API / Connections","review_status":"baseline_reviewed"},
+      "usage":{"text":"Usage","review_status":"baseline_reviewed"},
+      "settings":{"text":"Settings & docs","review_status":"baseline_reviewed"}
+    },
+    "sn": {
+      "overview":{"text":"Pfupiso","review_status":"draft_native_review_required"},
+      "apps":{"text":"Mapurogiramu akabatana","review_status":"draft_native_review_required"},
+      "source_learning":{"text":"Kudzidza kubva kunobva ruzivo","review_status":"draft_native_review_required"},
+      "curriculum":{"text":"Chikamu chezvidzidzo","review_status":"draft_native_review_required"},
+      "privacy_learning":{"text":"Kudzidza nezvekuchengetedza zvakavanzika","review_status":"draft_native_review_required"},
+      "security":{"text":"Chengetedzo uye ongororo","review_status":"draft_native_review_required"},
+      "api":{"text":"API explorer","review_status":"technical_term_preserved_review_required"},
+      "api_connections":{"text":"API / Connections","review_status":"technical_terms_preserved_review_required"},
+      "usage":{"text":"Mashandisirwo","review_status":"draft_native_review_required"},
+      "settings":{"text":"Zvirongwa nemagwaro","review_status":"draft_native_review_required"}
+    },
+    "nd": {
+      "overview":{"text":"Umbono ophelele","review_status":"draft_native_review_required"},
+      "apps":{"text":"Ama-app axhunyiwe","review_status":"draft_native_review_required"},
+      "source_learning":{"text":"Ukufunda okuvela emithonjeni","review_status":"draft_native_review_required"},
+      "curriculum":{"text":"Isigaba sekharikhulamu","review_status":"draft_native_review_required"},
+      "privacy_learning":{"text":"Ukufunda ngokuvikelwa kwemininingwane","review_status":"draft_native_review_required"},
+      "security":{"text":"Ukuvikeleka lokuhlolwa","review_status":"draft_native_review_required"},
+      "api":{"text":"API explorer","review_status":"technical_term_preserved_review_required"},
+      "api_connections":{"text":"API / Connections","review_status":"technical_terms_preserved_review_required"},
+      "usage":{"text":"Ukusetshenziswa","review_status":"draft_native_review_required"},
+      "settings":{"text":"Izilungiselelo lemibhalo","review_status":"draft_native_review_required"}
+    }
+  }
+}

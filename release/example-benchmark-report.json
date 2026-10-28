@@ -1,0 +1,142 @@
+{
+  "baseline": {
+    "category_exact_match": {
+      "coding": 1.0,
+      "memory": 1.0,
+      "reasoning": 1.0
+    },
+    "critical_failures": [],
+    "engine_version": "before-upgrade",
+    "evaluated": 3,
+    "metrics": {
+      "answer_precision": 1.0,
+      "exact_match": 1.0,
+      "lexical_f1": 1.0,
+      "non_empty": 1.0,
+      "reference_recall": 1.0
+    },
+    "missing_answers": [],
+    "per_case": [
+      {
+        "answer_present": true,
+        "category": "coding",
+        "critical": false,
+        "id": "code-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      },
+      {
+        "answer_present": true,
+        "category": "memory",
+        "critical": false,
+        "id": "memory-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      },
+      {
+        "answer_present": true,
+        "category": "reasoning",
+        "critical": true,
+        "id": "math-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      }
+    ],
+    "run_id": "baseline-example"
+  },
+  "baseline_exact_match": 1.0,
+  "candidate": {
+    "category_exact_match": {
+      "coding": 1.0,
+      "memory": 1.0,
+      "reasoning": 1.0
+    },
+    "critical_failures": [],
+    "engine_version": "after-upgrade",
+    "evaluated": 3,
+    "metrics": {
+      "answer_precision": 1.0,
+      "exact_match": 1.0,
+      "lexical_f1": 1.0,
+      "non_empty": 1.0,
+      "reference_recall": 1.0
+    },
+    "missing_answers": [],
+    "per_case": [
+      {
+        "answer_present": true,
+        "category": "coding",
+        "critical": false,
+        "id": "code-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      },
+      {
+        "answer_present": true,
+        "category": "memory",
+        "critical": false,
+        "id": "memory-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      },
+      {
+        "answer_present": true,
+        "category": "reasoning",
+        "critical": true,
+        "id": "math-001",
+        "metrics": {
+          "answer_precision": 1.0,
+          "exact_match": 1.0,
+          "lexical_f1": 1.0,
+          "non_empty": 1.0,
+          "reference_recall": 1.0
+        }
+      }
+    ],
+    "run_id": "candidate-example"
+  },
+  "candidate_exact_match": 1.0,
+  "created_at": "2026-10-26T13:54:32+00:00",
+  "dataset_version": "example-v1",
+  "gate_reasons": [],
+  "notes": [
+    "Lexical/reference metrics are regression signals, not proof of factual correctness.",
+    "Critical cases require exact normalized reference match unless the dataset's reference is revised by a human reviewer.",
+    "Candidate and baseline are scored on the same deterministic, category-balanced sample."
+  ],
+  "promoted": true,
+  "regression": 0.0,
+  "sample_size_evaluated": 3,
+  "sample_size_requested": 5,
+  "sampled_case_ids": [
+    "code-001",
+    "memory-001",
+    "math-001"
+  ],
+  "schema_version": 1
+}

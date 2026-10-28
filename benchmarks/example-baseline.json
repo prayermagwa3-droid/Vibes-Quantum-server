@@ -1,0 +1,10 @@
+{
+  "run_id": "baseline-example",
+  "engine_version": "before-upgrade",
+  "dataset_version": "example-v1",
+  "answers": {
+    "math-001": "42",
+    "code-001": "print hello",
+    "memory-001": "To retain provenance and traceability"
+  }
+}

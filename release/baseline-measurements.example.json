@@ -1,0 +1,9 @@
+{
+  "measurement_protocol": "Use same evaluation dataset version, hardware, concurrency, provider/model configuration, traffic mix and warmup window for stable and candidate. Record the source revision for both runs.",
+  "stable_revision": "REPLACE_WITH_STABLE_GIT_SHA_OR_TREE_HASH",
+  "candidate_revision": "REPLACE_WITH_CANDIDATE_GIT_SHA_OR_TREE_HASH",
+  "quality_score": {"baseline": null, "candidate": null},
+  "p95_latency_ms": {"baseline": null, "candidate": null},
+  "cost_per_1000_requests": {"baseline": null, "candidate": null},
+  "resource_metrics": {"peak_rss_mb": null, "cpu_percent_mean": null, "storage_bytes": null, "note": "Fill with measured values; null means unavailable and blocks promotion."}
+}

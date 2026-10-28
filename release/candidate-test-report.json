@@ -1,0 +1,70 @@
+{
+  "report_schema": 1,
+  "created_utc": "2026-10-20T11:42:42+00:00",
+  "candidate_version": "see release-manifest.json",
+  "checks": {
+    "source_manifest": {
+      "status": "passed",
+      "generate": {
+        "status": "passed",
+        "exit_code": 0,
+        "duration_seconds": 1.031,
+        "output_tail": "{\n  \"manifest\": \"/mnt/data/work19/VibesQuantumServer/release/artifact-manifest.json\",\n  \"files\": 104,\n  \"source_revision\": \"tree-sha256:3dbd2143ac65e77cab24d8a2995316c74f8b1ade10da9330f82f65125d15ae20\"\n}\n"
+      },
+      "verify": {
+        "status": "passed",
+        "exit_code": 0,
+        "duration_seconds": 0.738,
+        "output_tail": "{\n  \"valid\": true,\n  \"errors\": []\n}\n"
+      }
+    },
+    "unit_tests": {
+      "status": "passed",
+      "detail": {
+        "status": "passed",
+        "exit_code": 0,
+        "duration_seconds": 10.736,
+        "output_tail": ".....................................................                    [100%]\n53 passed in 8.74s\n"
+      }
+    },
+    "evaluation_tests": {
+      "status": "passed",
+      "detail": "Python evaluation and quality-runtime tests included in combined suite"
+    },
+    "integration_tests": {
+      "status": "unavailable",
+      "exit_code": 127,
+      "duration_seconds": 0.003,
+      "output_tail": "Gradle 9.6.1 is not installed or cached.\nFor a truly offline build, install/cache Gradle 9.6.1 and the project's dependencies once, then rerun with --offline.\n"
+    },
+    "static_secret_scan": {
+      "status": "passed",
+      "detail": {
+        "status": "passed",
+        "findings": []
+      }
+    },
+    "security_tests": {
+      "status": "unavailable",
+      "reason": "The dedicated JVM authentication/security suite could not be run because the configured Gradle 9.6.1 toolchain is unavailable; static secret-pattern scan is reported separately."
+    },
+    "staging_smoke": {
+      "status": "skipped",
+      "reason": "Set VIBES_STAGING_HEALTH_URL to an actual staging health endpoint"
+    },
+    "baseline_comparison": {
+      "status": "skipped",
+      "reason": "No measured stable/candidate comparison supplied"
+    },
+    "rollback_drill": {
+      "status": "skipped",
+      "reason": "Must be performed against a disposable staging deployment; no production rollback is attempted by this script"
+    }
+  },
+  "baseline_comparison": {
+    "quality_score": null,
+    "p95_latency_ms": null,
+    "cost_per_1000_requests": null
+  },
+  "promotion": "DENY unless every critical gate is passed"
+}

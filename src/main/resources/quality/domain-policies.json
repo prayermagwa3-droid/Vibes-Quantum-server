@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "default_domain": "general",
+  "domains": {
+    "general": {
+      "impact": "low",
+      "require_citations": false,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "when appropriate",
+      "allow_learning_from_examples": true,
+      "reviewed_glossary_required": false,
+      "detection_terms": [
+        "general information",
+        "explain",
+        "how does"
+      ],
+      "trusted_evidence_hosts": []
+    },
+    "health": {
+      "impact": "high",
+      "require_citations": true,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "recommend a qualified clinician for diagnosis, emergencies, or treatment decisions",
+      "allow_learning_from_examples": false,
+      "reviewed_glossary_required": true,
+      "safety_note": "Do not diagnose, replace emergency care, or give individualized treatment instructions without qualified oversight.",
+      "detection_terms": [
+        "health",
+        "medicine",
+        "medication",
+        "diagnosis",
+        "symptom",
+        "treatment",
+        "doctor",
+        "illness",
+        "medical",
+        "dose",
+        "emergency"
+      ],
+      "trusted_evidence_hosts": [
+        "who.int",
+        "cdc.gov",
+        "nhs.uk"
+      ]
+    },
+    "farming_chemicals": {
+      "impact": "high",
+      "require_citations": true,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "recommend a qualified agronomist or local agricultural extension officer; follow the product label and local regulations",
+      "allow_learning_from_examples": false,
+      "reviewed_glossary_required": true,
+      "safety_note": "Do not guess chemical dose, mixing, restricted-use status, pre-harvest interval, or protective equipment; require the exact product label and local approved guidance.",
+      "detection_terms": [
+        "pesticide",
+        "herbicide",
+        "insecticide",
+        "fungicide",
+        "chemical spray",
+        "mix chemicals",
+        "pre-harvest interval",
+        "restricted use"
+      ],
+      "trusted_evidence_hosts": [
+        "fao.org",
+        "who.int",
+        "epa.gov",
+        "extension.umn.edu"
+      ]
+    },
+    "finance": {
+      "impact": "high",
+      "require_citations": true,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "recommend a qualified, appropriately licensed financial professional for consequential decisions",
+      "allow_learning_from_examples": false,
+      "reviewed_glossary_required": true,
+      "safety_note": "Distinguish general education from personalized financial advice; disclose assumptions and material risks.",
+      "detection_terms": [
+        "investment",
+        "investing",
+        "loan",
+        "debt",
+        "interest rate",
+        "stock",
+        "crypto",
+        "tax advice",
+        "financial advice",
+        "banking"
+      ],
+      "trusted_evidence_hosts": [
+        "sec.gov",
+        "investor.gov",
+        "consumerfinance.gov"
+      ]
+    },
+    "faith": {
+      "impact": "medium",
+      "require_citations": true,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "respect the user's tradition and recommend a trusted leader when pastoral guidance is requested",
+      "allow_learning_from_examples": true,
+      "reviewed_glossary_required": true,
+      "safety_note": "Identify tradition, translation, and interpretive differences; do not present one interpretation as universal.",
+      "detection_terms": [
+        "scripture",
+        "bible",
+        "quran",
+        "prayer",
+        "faith",
+        "religion",
+        "theology",
+        "church",
+        "mosque"
+      ],
+      "trusted_evidence_hosts": []
+    },
+    "education": {
+      "impact": "medium",
+      "require_citations": false,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "refer to the relevant teacher or official syllabus when curriculum-specific correctness matters",
+      "allow_learning_from_examples": true,
+      "reviewed_glossary_required": true,
+      "safety_note": "Separate explanation from official syllabus requirements; preserve the learner's work and avoid fabricating references.",
+      "detection_terms": [
+        "syllabus",
+        "zimsec",
+        "exam question",
+        "homework",
+        "curriculum",
+        "school assignment",
+        "learning objective"
+      ],
+      "trusted_evidence_hosts": []
+    },
+    "legal": {
+      "impact": "high",
+      "require_citations": true,
+      "require_uncertainty_for_important_claims": true,
+      "professional_help": "recommend a qualified lawyer or legal-aid service in the relevant jurisdiction for consequential decisions",
+      "allow_learning_from_examples": false,
+      "reviewed_glossary_required": true,
+      "safety_note": "Always establish jurisdiction and date; do not present general information as individualized legal representation.",
+      "detection_terms": [
+        "legal advice",
+        "lawyer",
+        "court",
+        "contract law",
+        "lawsuit",
+        "legal rights",
+        "police rights",
+        "statute",
+        "jurisdiction"
+      ],
+      "trusted_evidence_hosts": [
+        "zimlii.org",
+        "saflii.org",
+        "veritaszim.net"
+      ]
+    }
+  },
+  "evidence_source_policy_note": "Host allowlists are a minimum filter, not proof that a specific page is accurate, current, unbiased, or jurisdiction-appropriate. Configure/review each domain allowlist and require human review for jurisdiction-dependent claims."
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "critical_checks": ["source_manifest", "unit_tests", "integration_tests", "security_tests", "evaluation_tests", "staging_smoke", "baseline_comparison", "rollback_drill"],
+  "allowed_statuses": ["passed", "failed", "skipped", "unavailable"],
+  "promotion_policy": "deny_if_any_critical_check_is_not_passed",
+  "default_rollout_percent": 0,
+  "rollout_steps_percent": [1, 5, 10, 25, 50, 100],
+  "rollback_triggers": {"error_rate_increase_percent": 2, "p95_latency_regression_percent": 20, "quality_score_regression_percent": 2},
+  "note": "Thresholds are conservative defaults and must be reviewed against measured service SLOs before production use."
+}

@@ -1,0 +1,24 @@
+{
+  "release_schema_version": 1,
+  "product": "Vibes Quantum Ecosystem",
+  "candidate_version": "2.5.0-rc.1",
+  "source_revision": "REQUIRED_AT_BUILD",
+  "created_utc": "SET_BY_RELEASE_PIPELINE",
+  "contracts": {"gateway_api": "v1", "engine_api": "v1", "error_envelope": "v1"},
+  "schemas": {"database": "1", "knowledge": "1"},
+  "prompts": {"catalog": "1", "safety_policy": "1"},
+  "provider_config_schema": "1",
+  "evaluation_dataset": {"id": "sample-holdout", "version": "1", "holdout_must_remain_separate": true},
+  "baseline": {"release": "2.4.x", "quality_score": null, "p95_latency_ms": null, "cost_per_1000_requests": null, "note": "Populate with measured stable deployment results before promotion; null is unavailable, not zero."},
+  "rollout": {"initial_percent": 0, "max_percent": 100, "require_staging_smoke": true, "require_rollback_drill": true, "require_all_critical_checks": true},
+  "feature_flags": {
+    "semantic_embeddings": false,
+    "knowledge_graph_visualization": false,
+    "training_jobs": false,
+    "offline_knowledge_packs": false,
+    "canary_detection": false,
+    "adaptive_routing": false,
+    "multimodal_inputs": false,
+    "autonomous_research_planning": false
+  }
+}
