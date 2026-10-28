@@ -1,0 +1,14 @@
+.gradle/
+build/
+out/
+.idea/
+*.iml
+.env
+local.properties
+data/
+config/ai-providers.json
+sandbox/
+release/
+scripts/
+**/*.md
+.recovery-tmp-*/
